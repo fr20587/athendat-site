@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
+// Third's Modules
+import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
+
 
 @NgModule({
   exports: [
@@ -11,6 +14,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    NgxBootstrapIconsModule,
   ]
 })
 export class SharedModule { }

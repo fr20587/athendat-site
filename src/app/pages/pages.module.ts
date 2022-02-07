@@ -12,12 +12,12 @@ import { ContactComponent } from './contact/contact.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 import { ProductsComponent } from './products/products.component';
 import { TermsComponent } from './terms/terms.component';
 
 // Routes
 import { PAGES_ROUTES } from './pages.routing';
-import { PrivacyComponent } from './privacy/privacy.component';
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
         PrivacyComponent,
     ],
     imports: [
+
         LayoutModule,
         RouterModule.forChild(PAGES_ROUTES),
         SharedModule

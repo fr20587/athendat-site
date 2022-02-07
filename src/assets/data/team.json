@@ -1,0 +1,28 @@
+[{
+    "_id": "1",
+    "imageUrl": "assets/images/team/frank.png",
+    "fullName": "Frank Rodríguez López",
+    "title": "CEO & Fundador",
+    "abstract": "Líder del Proyecto ATHENDAT, con más de ocho años de experiencia en el diseño y gestión de cadenas de suministro decidió emprender a tiempo parcial el Proyecto ATHENDAT, se caracteriza por ser un soñador y buscar soluciones para la comunidad de problemas que coexisten en nuestra sociedad.",
+    "socials": [{
+            "name": "LinkedIn",
+            "icon": "linkedin",
+            "link": "https://linkedin.com/in/fr20587/"
+        },
+        {
+            "name": "Telegram",
+            "icon": "telegram",
+            "link": "https://t.me/athendat"
+        },
+        {
+            "name": "Twitter",
+            "icon": "twitter",
+            "link": "https://twitter.com/fr20587"
+        },
+        {
+            "name": "Facebook",
+            "icon": "facebook",
+            "link": "https://facebook.com/fr0789"
+        }
+    ]
+}]

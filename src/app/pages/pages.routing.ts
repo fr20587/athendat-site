@@ -12,6 +12,7 @@ import { ProductsComponent } from './products/products.component';
 import { TermsComponent } from './terms/terms.component';
 
 // Resolvers
+import { HomeResolver } from './home/home.resolver';
 import { PrivacyResolver } from './privacy/privacy.resolver';
 import { TermsResolver } from './terms/terms.resolver';
 
@@ -26,7 +27,10 @@ export const PAGES_ROUTES: Routes = [
         children: [
             {
                 path: 'home',
-                component: HomeComponent
+                component: HomeComponent,
+                resolve: {
+                    data: HomeResolver
+                }
             },
             {
                 path: 'about',

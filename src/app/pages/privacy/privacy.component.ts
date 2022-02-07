@@ -26,7 +26,6 @@ import { Privacy } from './privacy.types';
 })
 export class PrivacyComponent implements OnInit, OnDestroy {
 
-
     // Public properties
     public privacy!: Privacy;
 
@@ -38,7 +37,7 @@ export class PrivacyComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _PrivacyService: PrivacyService,
+        private _privacyService: PrivacyService,
     ) { }
 
     // -----------------------------------------------------------------------------------------------------
@@ -51,7 +50,7 @@ export class PrivacyComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
 
         // Get Privacy
-        this._PrivacyService.privacy$
+        this._privacyService.privacy$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((privacy) => {
 
@@ -60,7 +59,7 @@ export class PrivacyComponent implements OnInit, OnDestroy {
 
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
-            })
+            });
     }
 
     /**

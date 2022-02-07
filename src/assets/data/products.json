@@ -1,0 +1,35 @@
+[{
+        "_id": "1",
+        "logoUrl": "assets/images/products/logo-athgro.svg",
+        "status": "En pruebas",
+        "name": "Athgro.Market",
+        "abstract": "Athgro.Market es una plataforma para el comercio minorista en línea de productos agrícolas que permite gestionar todo el proceso desde el la copra de productos a e insumos proveedores hasta la planificación de las entregas a los clientes."
+    },
+    {
+        "_id": "2",
+        "logoUrl": "assets/images/products/logo-athbook.svg",
+        "status": "En desarrollo",
+        "name": "Athbook",
+        "abstract": "Athbook es una plataforma para la gestión de reservas para todo tipo de negocio que requiera de este proceso, un ejemplo pueden ser: hostales, restaurantes, salones de belleza, clínicas veterinarias, eventos, transfers entre otros muchos."
+    },
+    {
+        "_id": "3",
+        "logoUrl": "assets/images/products/logo-erp.svg",
+        "status": "En desarrollo",
+        "name": "Atherp",
+        "abstract": "Atherp es una plataforma para la planificación de recursos empresariales (ERP) ciento por ciento integrable con el resto de nuestras aplicaciones o aplicaciones de terceros."
+    },
+    {
+        "_id": "4",
+        "logoUrl": "assets/images/products/logo-erp.svg",
+        "status": "En desarrollo",
+        "name": "aInvertir",
+        "abstract": "aInvertir es una aplicación para la realización de estudios de pre inversión según la legislación aplicable en Cuba capaz de realizar todos los cálculos financieros necesarios para que conozca de antemano si la inversión que piensa hacer tendrá los beneficios deseados en el tiempo previsto."
+    },
+    {
+        "_id": "5",
+        "status": "Disponible",
+        "name": "Desarrollo a la medida",
+        "abstract": "Si necesita una desarrollo de una aplicación específica para la gestión de su negocio o requiere de una web para posicionar su negocio en Internet, estamos a su disposición."
+    }
+]

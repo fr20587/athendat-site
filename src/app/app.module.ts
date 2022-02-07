@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 // Routes
 import { APP_ROUTES } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
+import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 /**
  * Router Config
@@ -34,7 +35,8 @@ registerLocaleData(localeEs);
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES, routerConfig)
+    RouterModule.forRoot(APP_ROUTES, routerConfig),
+    NgxBootstrapIconsModule.pick(allIcons)
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-CU' },

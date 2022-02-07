@@ -1,36 +1,228 @@
-<div class="pb-10 sm:py-20">
+<div class="">
 
-    <!-- Hero Section -->
-    <div class="w-full flex py-6 sm:py-20 flex-col gap-5">
-        <span class="text-3xl sm:text-5xl font-bold text-center leading-tight">
-            Bienvenido, somos ATHENDAT.
-        </span>
-        <span class="text-2xl text-center text-gray-500 leading-tight">
-            Un equipo creativo que desarrolla soluciones para potenciar los beneficios de su negocio y el bienestar de sus
-            clientes.
-        </span>
+    <div class="pb-10 sm:py-20">
+
+        <!-- Hero Section -->
+        <section class="py-8 bg-white lg:py-24 dark:bg-gray-900">
+
+            <div class="px-4 mx-auto max-w-screen-xl lg:px-12 lg:text-center">
+
+                <!-- New product action -->
+                <a class="inline-flex cursor-pointer justify-between items-center py-1 px-1 pr-4 mb-4 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200">
+                    <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">Nuevo</span>
+                    <span class="text-sm font-medium">Athgro.Market - Plataforma de comercio minorista</span>
+                    <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+
+                <!-- Title -->
+                <h1 class="mb-4 text-4xl font-bold text-gray-900 lg:font-extrabold lg:text-6xl lg:leading-tight dark:text-white lg:text-center 2xl:px-36 lg:mb-8">
+                    Bienvenido, somos ATHENDAT.
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-2xl xl:px-32">
+                    Un equipo creativo que desarrolla soluciones para potenciar los beneficios de su negocio y el bienestar de sus clientes.
+                </p>
+
+
+            </div>
+        </section>
+
+        <!-- Products section -->
+        <section class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
+            <div class="max-w-screen-xl px-4 mx-auto lg:px-12">
+
+                <!-- Section title -->
+                <h2 class="mb-4 text-2xl font-bold text-gray-900 lg:font-extrabold lg:text-4xl lg:leading-snug dark:text-white lg:px-64 lg:text-center">
+                    Explore nuestros productos
+                </h2>
+
+                <!-- Section subtitle -->
+                <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-xl lg:mb-24 lg:px-56 lg:text-center">
+                    Ponemos a su disposición un catálogo de productos creados para aumentar los beneficios de su negocio con mucho menor esfuerzo.
+                </p>
+
+                <!-- Products grid -->
+                <ul class="grid gap-6 md:grid-cols-2">
+
+                    <ng-container *ngFor="let product of products">
+                        <li class="lg:mb-3">
+                            <a href="#" class="flex flex-wrap py-3 rounded-lg lg:p-5 hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                                <!-- Product logo -->
+                                <ng-container *ngIf="product.logoUrl">
+                                    <img class="h-8 mb-5" [src]="product.logoUrl" [alt]="product.name">
+                                </ng-container>
+
+                                <div>
+
+                                    <!-- Product status -->
+                                    <span class="inline-block mb-3  text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md" [ngClass]="{'bg-teal-100 dark:bg-teal-200 text-teal-800': product.status === 'Disponible',
+                                    'bg-yellow-100 dark:bg-yellow-200 text-yellow-800': product.status === 'En desarrollo',
+                                    'bg-pink-100 dark:bg-pink-200 text-pink-800': product.status === 'En pruebas'}">
+                                        {{product.status}}
+                                    </span>
+
+                                    <!-- Product name -->
+                                    <h3 class="mb-2 text-xl font-bold text-gray-900 lg:text-2xl dark:text-white">
+                                        {{product.name}}
+                                    </h3>
+
+                                    <!-- Product description -->
+                                    <p class="mb-3 text-gray-500 dark:text-gray-400 lg:text-lg line-clamp-2">
+                                        {{product.abstract}}
+                                    </p>
+
+                                    <!-- Product action link -->
+                                    <span class="font-medium text-blue-600 dark:text-blue-500 lg:-text-lg">
+                                        Conocer más
+
+                                        <!-- Arrow -->
+                                        <svg class="inline w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </li>
+                    </ng-container>
+
+                </ul>
+            </div>
+        </section>
+
+        <!-- Team section -->
+        <section class="bg-white dark:bg-gray-900 pb-8 lg:py-24">
+            <div class="max-w-screen-xl px-4 lg:px-12 mx-auto">
+
+                <!-- Section title -->
+                <h2 class="font-bold lg:font-extrabold text-2xl lg:text-4xl lg:leading-snug text-gray-900 dark:text-white lg:text-center 2xl:px-48 mb-4">
+                    Nuestro Equipo
+                </h2>
+
+                <!-- Section subtitle -->
+                <p class="text-gray-500 dark:text-gray-400 font-normal lg:text-center text-lg lg:text-xl xl:px-64 mb-10 lg:mb-16">
+                    Somos un equipo de apasionados jóvenes con diferentes habilidades, que creemos en las oportunidades que nos pueden ofrecer las herramientas digitales e Internet para potenciar el bienestar de nuestra sociedad.
+                </p>
+
+                <!-- Members grid -->
+                <div class="grid lg:grid-cols-2">
+
+                    <!-- Member -->
+                    <ng-container *ngFor="let member of team">
+                        <figure class="bg-gray-50 dark:bg-gray-800 lg:rounded-tl-lg py-12 lg:py-16 px-6 lg:px-8 lg:border-r lg:border-b border-gray-200 dark:border-gray-700 relative mb-6 xl:mb-0">
+                            <blockquote class="mb-8 text-center">
+
+                                <!-- Member title -->
+                                <h3 class="text-gray-900 dark:text-white text-xl font-semibold mb-4">{{member.title}}</h3>
+
+                                <!-- Member rol -->
+                                <p class="text-gray-500 dark:text-gray-400 font-normal">
+                                    {{member.abstract}}
+                                </p>
+                            </blockquote>
+
+                            <figcaption class="flex justify-center items-center">
+                                <img class="w-14 h-14 rounded-full mr-5" [src]="member.imageUrl" [alt]="member.fullName">
+                                <div>
+
+                                    <!-- Member full name -->
+                                    <span class="block text-gray-900 dark:text-white text-xl font-medium">
+                                        {{member.fullName}}
+                                    </span>
+
+                                    <!-- Member social links -->
+                                    <div class="flex mt-2 space-x-6 justify-center">
+
+                                        <!-- Social Icons -->
+                                        <ng-container *ngFor="let social of member.socials">
+
+                                            <!-- LinkedIn Icon -->
+                                            <ng-container *ngIf="social.icon === 'linkedin'">
+                                                <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-blue-500 dark:hover:text-white">
+                                                    <span i-bs [name]="'linkedin'"></span>
+                                                </a>
+                                            </ng-container>
+
+                                            <!-- Telegram Icon -->
+                                            <ng-container *ngIf="social.icon === 'telegram'">
+                                                <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-blue-500 dark:hover:text-white">
+                                                    <span i-bs [name]="'telegram'"></span>
+                                                </a>
+                                            </ng-container>
+
+                                            <!-- Twitter Icon -->
+                                            <ng-container *ngIf="social.icon === 'twitter'">
+                                                <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-blue-500 dark:hover:text-white">
+                                                    <span i-bs [name]="'twitter'"></span>
+                                                </a>
+                                            </ng-container>
+
+                                            <!-- Facebook Icon -->
+                                            <ng-container *ngIf="social.icon === 'facebook'">
+                                                <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-blue-500 dark:hover:text-white">
+                                                    <span i-bs [name]="'facebook'"></span>
+                                                </a>
+                                            </ng-container>
+
+                                        </ng-container>
+
+
+                                    </div>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+                    </ng-container>
+                </div>
+            </div>
+        </section>
+
     </div>
+
 
     <!-- Newsletter Section -->
-    <div class="bg-gray-900 w-full p-2 py-10 sm:p-10 flex flex-col md:flex-row rounded-xl items-center justify-between">
+    <section class="py-20">
+        <div class="max-w-screen-xl px-4 lg:px-8 mx-auto">
+            <div class="bg-gray-800 dark:bg-gray-700 w-full rounded-3xl p-8 xl:p-12 2xl:p-16 -mt-24">
+                <div class="grid xl:grid-cols-2 xl:gap-8 2xl:gap-32 items-center">
+                    <div class="mb-8 xl:mb-0">
 
-        <div class="flex flex-col sm:w-1/2 gap-2 items-center sm:items-start mb-5 sm:mb-0">
-            <span class="font-bold text-white text-3xl tracking-wide">Novedades</span>
-            <span class="text-lg text-gray-100 text-center sm:text-left">
-                Manténgase al tanto de nuestras novedades.
-            </span>
+                        <!-- Title -->
+                        <h3 class="text-white text-xl lg:text-3xl font-bold mb-4">
+                            Reciba nuestros boletines
+                        </h3>
+
+                        <!-- Subtitle -->
+                        <p class="text-gray-300 font-normal">Manténgase al dia de nuestros progresos, noticias, actualizaciones y ofertas de nuevos productos, solo envíenos su correo electrónico.</p>
+                    </div>
+                    <div>
+
+                        <form>
+                            <div data-style="clean">
+                                <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields lg:grid xl:grid-cols-3 2xl:grid-cols-4 lg:gap-4">
+                                    <div class="formkit-field xl:col-span-2 2xl:col-span-3 mb-4 lg:mb-0">
+                                        <input type="email" class="formkit-input rounded-xl p-4 w-full border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600" name="email_address" aria-label="Ingrese su correo" placeholder="Ingrese su correo" required="">
+                                    </div>
+                                    <button data-element="submit" class="formkit-submit w-full text-white bg-blue-600 hover:bg-blue-700 font-semibold rounded-xl text-base px-5 py-3 text-center border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+                                        Enviar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="text-gray-300 text-sm font-medium mt-4">Nuevos productos y actualizaciones, nunca spam.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="flex sm:w-1/2 gap-5 flex-col sm:flex-row">
-
-            <input [type]="'email'" class="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                [placeholder]="'ejemplo@email.com'" required>
-
-            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Enviar
-            </button>
-        </div>
-
-    </div>
+    </section>
 
 </div>
