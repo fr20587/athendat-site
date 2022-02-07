@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.isotipo {
+    @media only screen and (min-width: 425px) {
+        display: block !important;
+    }
+}
+
+.imagotipo {
+    @media only screen and (min-width: 425px) {
+        display: hidden !important;
+    }
+}

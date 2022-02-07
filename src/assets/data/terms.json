@@ -1,0 +1,50 @@
+{
+    "updatedAt": "12/02/2022",
+    "introduction": "Los Términos y Condiciones de uso de nuestras aplicación en lo adelante 'Términos' establecen las pautas a seguir por todos los usuarios y los miembros de nuestra organización. Estos Términos pueden cambiar en cualquier momento y usted como usuario de nuestras aplicaciones será notificado oportunamente.",
+    "sections": [{
+            "name": "Procesamiento de sus datos.",
+            "description": "ATHENDAT se compromete a proteger sus datos personales y nunca compartirá estos con terceros a no ser que estos sean solicitados por las autoridades mediante una orden judicial.",
+            "points": [
+                "Todas las contraseñas que usted utilice deberán cumplir con los requisitos mínimos de seguridad incluyendo en ellas al menos: una mayúsculas, una minúsculas, un número y un carácter especial con una longitud mínima de ocho (8) caracteres.",
+                "Correo electrónico, ATHENDAT no utilizará su correo electrónico para enviarle publicidad engañosa o relacionadas con productos o servicios de terceros. Nunca le enviaremos una correo electrónico solicitándole datos personales ni sus contraseñas.",
+                "Datos de pagos, ATHENDAT tratará por todos los medios de no almacenar datos de pago de sus clientes ni de los usuarios de las aplicaciones y en caso de no quedar otra alternativa estos serán cifrados con el estándar de seguridad SHA512 y utilizando su contraseña como llave."
+            ]
+        },
+        {
+            "name": "Recolección de información",
+            "description": "ATHENDAT recolecta en sus aplicaciones solo los datos generado por el uso de las mismas con el fin de mejorar sus productos y las experiencia de uso de sus usuarios en nuevos desarrollos."
+        },
+        {
+            "name": "Cuentas y Usuarios",
+            "description": "ATHENDAT recomienda y exige que cada usuario utilice una sola cuenta para acceder a cada una de nuestras aplicaciones y no ve bien la multiplicidad de cuentas para un mismo usuario."
+        },
+        {
+            "name": "Prohibiciones, conducta y contenidos.",
+            "points": [
+                "Se prohíbe el uso de nuestras aplicaciones con el fin de promover el odio, racismo, xenofobia o cualquier otro comportamiento que afecte el bienestar de los miembros de la sociedad.",
+                "Se prohíbe la publicación de palabras obscenas y comentarios mal intencionados sobres productos, servicios o proveedores en nuestras plataformas de comercio electrónico, las violación de esto puede provocar la cancelación de sus cuenta.",
+                "Cualquier usuario que detecte un comportamiento inadecuado por parte de otro usuario o un uso inapropiado de nuestras aplicaciones por parte de un vendedor, esta en el derecho de contactar con nuestro equipo y reportarlo el acto."
+            ]
+        },
+        {
+            "name": "Disponibilidad de los servicios.",
+            "points": [
+                "ATHENDAT utiliza servidores internacionales y nacionales para mantener en funcionamiento sus aplicaciones por lo que dependemos totalmente de nuestros proveedores.",
+                "Ante cualquier caída de los servicios siempre notificaremos a todos los usuarios de las causas y las consecuencias.",
+                "Los mantenimientos y actualizaciones serán programados e informados todos nuestros clientes con al menos una semana de antelación."
+            ]
+        },
+        {
+            "name": "Noticias y boletines.",
+            "points": [
+                "Para mantener actualizados a nuestros clientes sobre nuevos productos y noticias relacionadas con ATHENDAT le enviaremos pequeñas notificaciones por correo electrónico o a través de notificaciones push en nuestras aplicaciones."
+            ]
+        },
+        {
+            "name": "Colaboraciones con terceros.",
+            "points": [
+                "Si en cualquier momento requerimos de la utilización de datos de los usuarios para colaboraciones con terceros estos siempre serán informados para que tomen la decisión de continuar o no utilizando nuestros productos."
+            ]
+        }
+    ]
+}

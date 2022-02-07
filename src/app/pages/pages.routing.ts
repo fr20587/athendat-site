@@ -1,0 +1,66 @@
+// Angular Modules
+import { Routes } from '@angular/router';
+
+// Components
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { FaqsComponent } from './faqs/faqs.component';
+import { HomeComponent } from './home/home.component';
+import { PagesComponent } from './pages.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { ProductsComponent } from './products/products.component';
+import { TermsComponent } from './terms/terms.component';
+
+// Resolvers
+import { PrivacyResolver } from './privacy/privacy.resolver';
+import { TermsResolver } from './terms/terms.resolver';
+
+/**
+ * Pages Routes
+ */
+export const PAGES_ROUTES: Routes = [
+
+    {
+        path: '',
+        component: PagesComponent,
+        children: [
+            {
+                path: 'home',
+                component: HomeComponent
+            },
+            {
+                path: 'about',
+                component: AboutComponent
+            },
+            {
+                path: 'contact',
+                component: ContactComponent
+            },
+            {
+                path: 'faqs',
+                component: FaqsComponent
+            },
+            {
+                path: 'terms',
+                component: TermsComponent,
+                resolve: {
+                    terms: TermsResolver
+                }
+            },
+            {
+                path: 'privacy',
+                component: PrivacyComponent,
+                resolve: {
+                    privacy: PrivacyResolver
+                }
+            },
+            {
+                path: 'products',
+                component: ProductsComponent
+            },
+        ]
+    }
+
+];
+
+

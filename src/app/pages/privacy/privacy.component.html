@@ -1,0 +1,82 @@
+<div class="py-20">
+
+    <!-- Section title -->
+    <div class="flex flex-col border-y py-14 items-center justify-center w-full gap-5">
+        <span class="text-5xl font-bold text-center leading-tight">
+            Política de Privacidad
+        </span>
+
+        <span class="text-2xl font-semibold text-center text-gray-500 leading-tight">
+            Actualizada: {{privacy.updatedAt}}
+        </span>
+    </div>
+
+    <!-- Privacy -->
+    <div class="flex flex-col gap-5 w-full my-20">
+
+        <!-- Privacy intro -->
+        <ng-container *ngIf="privacy.introduction">
+            <p class="text-xl text-gray-700">
+                {{privacy.introduction}}
+            </p>
+        </ng-container>
+
+        <!-- privacy sections -->
+        <ng-container *ngIf="privacy.sections">
+
+            <ng-container *ngFor="let section of privacy.sections; let i = index">
+
+                <div class="flex flex-col gap-5">
+
+                    <!-- Section Name -->
+                    <span class="font-bold tracking-wide text-xl">
+                        {{i+1}} - {{ section.name }}
+                    </span>
+
+                    <!-- Section Description -->
+                    <span class="text-xl text-gray-700">
+                        {{ section.description }}
+                    </span>
+
+                    <!-- Section Points -->
+                    <ul class="list-square pl-10" *ngIf="section.points">
+                        <li class="text-xl text-gray-700" *ngFor="let point of section.points">
+                            {{point}}
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+
+        </ng-container>
+
+    </div>
+
+    <!-- Call to Action -->
+    <div class="p-10 divide-x sm:justify-around w-full bg-white rounded-lg border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700 flex flex-col gap-10 sm:flex-row">
+
+        <a class="group cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-6 rounded-lg sm:w-1/2" [routerLink]="['/products']">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Productos y Servicios
+            </h5>
+            <p class="font-normal mb-3 text-gray-700 dark:text-gray-400">
+                Revise nuestros productos y servicios y escoja el que necesite para su negocio.
+            </p>
+            <span class="text-blue-600 group-hover:underline underline-offset-1">
+                    Revisar
+                </span>
+        </a>
+
+        <a class="group cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-6 rounded-lg sm:w-1/2" [routerLink]="['/faqs']">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                Preguntas Frecuentes
+            </h5>
+            <p class="font-normal mb-3 text-gray-700 dark:text-gray-400">
+                Échele un ojo al listado de preguntas y respuestas frecuentes de nuestra comunidad.
+            </p>
+            <span class="text-blue-600 group-hover:underline underline-offset-1">
+                    Ver
+                </span>
+        </a>
+    </div>
+
+</div>
