@@ -28,17 +28,20 @@ export const PAGES_ROUTES: Routes = [
             {
                 path: 'home',
                 component: HomeComponent,
+                data: {animation: 'HomePage'},
                 resolve: {
                     data: HomeResolver
                 }
             },
             {
                 path: 'about',
-                component: AboutComponent
+                component: AboutComponent,
+                data: {animation: 'AboutPage'}
             },
             {
                 path: 'contact',
-                component: ContactComponent
+                component: ContactComponent,
+                data: {animation: 'ContactPage'}
             },
             {
                 path: 'faqs',

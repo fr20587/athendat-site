@@ -3,6 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+// router-outlet~* {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+// }
 .isotipo {
     @media only screen and (min-width: 425px) {
         display: block !important;

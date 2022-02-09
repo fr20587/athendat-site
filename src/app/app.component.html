@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<div class="relative">
+    <router-outlet></router-outlet>
+
+    <!-- Back to top button -->
+    <ng-container *ngIf="!showButton">
+        <button class="fixed bottom-20 right-10 h-12 w-12 p-3 rounded-sm border border-gem-900 border-opacity-50 animate-pulse shadow-md z-50 flex justify-center items-center">
+            <span class="text-gem-900" i-bs [name]="'arrow-up'" width="1.5rem" height="1.5rem"></span>
+        </button>
+    </ng-container>
+</div>

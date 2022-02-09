@@ -1,24 +1,31 @@
 // Angular Modules
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-CU';
+
+// Third's Modules
+import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 // App Component
 import { AppComponent } from './app.component';
 
+// Modules
+import { SharedModule } from './shared/shared.module';
+
 // Routes
 import { APP_ROUTES } from './app.routing';
-import { HttpClientModule } from '@angular/common/http';
-import { allIcons, NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
 /**
  * Router Config
  */
 const routerConfig: ExtraOptions = {
-  preloadingStrategy: PreloadAllModules,
-  scrollPositionRestoration: 'enabled'
+    preloadingStrategy: PreloadAllModules,
+    anchorScrolling: "enabled",
+    scrollPositionRestoration: 'enabled'
 };
 
 /**
@@ -29,18 +36,21 @@ const routerConfig: ExtraOptions = {
 registerLocaleData(localeEs);
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES, routerConfig),
-    NgxBootstrapIconsModule.pick(allIcons)
-  ],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'es-CU' },
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        RouterModule.forRoot(APP_ROUTES, routerConfig),
+        NgxBootstrapIconsModule.pick(allIcons),
+        SharedModule
+    ],
+    providers: [
+        { provide: LOCALE_ID, useValue: 'es-CU' },
+        { provide: LocationStrategy, useClass: HashLocationStrategy },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

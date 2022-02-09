@@ -12,7 +12,6 @@ export const APP_ROUTES: Routes = [
   // Pages Modules
   { path: '', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule) },
 
-
 ];
 
 

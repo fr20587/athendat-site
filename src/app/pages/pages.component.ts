@@ -1,16 +1,24 @@
+// Angular Modules
 import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+// Animations
+import { pagesAnimation } from './pages.animations';
 
 @Component({
-  selector: 'app-pages',
-  templateUrl: './pages.component.html',
-  styles: [
-  ]
+    selector: 'ath-pages',
+    templateUrl: './pages.component.html',
+    animations: [pagesAnimation],
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
+
+    getAnimations(outlet: RouterOutlet): any {
+        return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+    }
 
 }

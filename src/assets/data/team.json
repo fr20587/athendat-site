@@ -25,4 +25,15 @@
             "link": "https://facebook.com/fr0789"
         }
     ]
+}, {
+    "_id": "2",
+    "imageUrl": "assets/images/team/abel.jfif",
+    "fullName": "Abel Pérez Chirino",
+    "title": "Responsable de Multimedia",
+    "abstract": "Jóven emprendedor, enfocado en satisfacer las necesidades de los clientes, creativo, amante de la música, la fotografía, el diseño gráfico, la edición audiovisual, innovador, responsable con el trabajo, amigable.",
+    "socials": [{
+        "name": "Facebook",
+        "icon": "facebook",
+        "link": "https://www.facebook.com/profile.php?id=100009022694959"
+    }]
 }]

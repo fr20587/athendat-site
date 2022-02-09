@@ -32,7 +32,6 @@ import { PAGES_ROUTES } from './pages.routing';
         PrivacyComponent,
     ],
     imports: [
-
         LayoutModule,
         RouterModule.forChild(PAGES_ROUTES),
         SharedModule
