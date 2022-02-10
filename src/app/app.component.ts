@@ -1,9 +1,10 @@
 // Angular Modules
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 // Third's Modules
+import { Howl } from 'howler';
+import { Subject } from 'rxjs';
 import { IconNamesEnum } from 'ngx-bootstrap-icons';
-import { Observable, fromEvent, takeUntil, Subject } from 'rxjs';
 
 /**
  * App Component
@@ -24,13 +25,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
     // Public properties
     public iconNames = IconNamesEnum;
-    public scroll$: Observable<Event> = fromEvent(document, 'scroll');
-    public scrollPercent: number = 0;
+    public scrollY: number = 0;
     public showButton: boolean = false;
+    public sound = new Howl({
+        src: 'assets/audio/bg-audio.mp3',
+        loop: true,
+        volume: 0.3
+    });
 
     // Private properties
     private _unsubscribeAll: Subject<any> = new Subject<any>();
-
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -40,19 +44,8 @@ export class AppComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit() {
-
-        // Subscribe to scroll position changes
-        this.scroll$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((event) => {
-                this.scrollPercent = this._calculateScrollPercentage(event);
-                console.log(this.scrollPercent >= 14.34)
-                if (this.scrollPercent >= 14.34) {
-                    this.showButton = true;
-                } else {
-                    this.showButton = false;
-                }
-            });
+        // Play music background
+        this.sound.play();
     }
 
     /**
@@ -64,21 +57,27 @@ export class AppComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.complete();
     }
 
-    // -----------------------------------------------------------------------------------------------------
-    // @ Private methods
-    // -----------------------------------------------------------------------------------------------------
+    /**
+     * Watch screen width
+     *
+     * @memberof HeaderComponent
+     */
+    @HostListener('window:scroll', ['$event'])
+    public onWindowResize() {
+        this.scrollY = window.scrollY;
+    }
 
-    private _calculateScrollPercentage(event): number {
-
-        const {
-            scrollTop,
-            scrollHeight,
-            clientHeight,
-        } = event.target.documentElement;
-
-        const scrollPercent = (scrollTop / (scrollHeight + clientHeight)) * 100;
-
-        return scrollPercent;
+    /**
+     * Back to top scroll
+     *
+     * @memberof AppComponent
+     */
+    public backToTop() {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 
 }

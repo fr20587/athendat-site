@@ -3,6 +3,7 @@
     "imageUrl": "assets/images/team/frank.png",
     "fullName": "Frank Rodríguez López",
     "title": "CEO & Fundador",
+    "subtitle": "Responsable del Proyecto",
     "abstract": "Líder del Proyecto ATHENDAT, con más de ocho años de experiencia en el diseño y gestión de cadenas de suministro decidió emprender a tiempo parcial el Proyecto ATHENDAT, se caracteriza por ser un soñador y buscar soluciones para la comunidad de problemas que coexisten en nuestra sociedad.",
     "socials": [{
             "name": "LinkedIn",
@@ -23,17 +24,93 @@
             "name": "Facebook",
             "icon": "facebook",
             "link": "https://facebook.com/fr0789"
+        }, {
+            "name": "GitHub",
+            "icon": "github",
+            "link": "https://github.com/fr20587"
         }
     ]
 }, {
     "_id": "2",
     "imageUrl": "assets/images/team/abel.jfif",
     "fullName": "Abel Pérez Chirino",
-    "title": "Responsable de Multimedia",
+    "title": "CBO",
+    "subtitle": "Responsable de Marca",
     "abstract": "Jóven emprendedor, enfocado en satisfacer las necesidades de los clientes, creativo, amante de la música, la fotografía, el diseño gráfico, la edición audiovisual, innovador, responsable con el trabajo, amigable.",
     "socials": [{
         "name": "Facebook",
         "icon": "facebook",
         "link": "https://www.facebook.com/profile.php?id=100009022694959"
     }]
+}, {
+    "_id": "3",
+    "imageUrl": "assets/images/team/andiel.jpg",
+    "fullName": "Andiel Muñoz Viamonte",
+    "title": "CXO & Co-Fundador",
+    "subtitle": "Responsable de Interfaz y Experiencia de Usuarios",
+    "abstract": "Programador con más de 7 años de experiencia en el diseño y desarrollo de software, se caracteriza por ser emprendedor buscando siempre la superación continua, apasionado con todo lo relacionado con el mundo de los sistemas ,amante del diseño, la imagen y fotografía, se integra al Proyecto ATHENDAT en búsqueda de lograr sistemas que contribuyan al desarrollo de la sociedad.",
+    "socials": [{
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/in/andielmv89/"
+    }, {
+        "name": "Telegram",
+        "icon": "telegram",
+        "link": "https://t.me/andypro89"
+    }, {
+        "name": "Facebook",
+        "icon": "facebook",
+        "link": "https://www.facebook.com/andiel8"
+    }, {
+        "name": "GitHub",
+        "icon": "github",
+        "link": "https://github.com/Andy2013cuba"
+    }]
+}, {
+    "_id": "4",
+    "imageUrl": "assets/images/team/lazaro.jpg",
+    "fullName": "Lázaro Yasiel Pérez Roquet",
+    "title": "CTO & Co-Fundador",
+    "subtitle": "Responsable de Tecnologías",
+    "abstract": "Con más de cinco años de experiencia en el desarrollo de software  se une al proyecto ATHENDAT, emprende con el sueño de implementar soluciones a problemas que den valor a la sociedad, una de sus principales características  es el ser un idealista, comprometido con sus objetivos y el equipo.",
+    "socials": [{
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/in/l%C3%A1zaro-yasiel-p%C3%A9rez-roquet-5a789b12b/"
+    }, {
+        "name": "Telegram",
+        "icon": "telegram",
+        "link": "https://t.me/Lyperez"
+    }, {
+        "name": "Facebook",
+        "icon": "facebook",
+        "link": "https://www.facebook.com/lazaroyasiel"
+    }]
+}, {
+    "_id": "5",
+    "imageUrl": "assets/images/team/anabel.jpg",
+    "fullName": "Anabel Rodríguez González",
+    "title": "COO & Co-Fundador",
+    "subtitle": "Responsable de Operaciones",
+    "abstract": "COO del Proyecto ATHENDAT,  con más de 5 años de experiencia en el análisis y diseño de aplicaciones, emprendedora a tiempo parcial, se caracteriza por su capacidad para capturar las necesidades de los clientes y extrapolarlo a una aplicación que cumpla las expectativas de los mismos.",
+    "socials": [{
+        "name": "LinkedIn",
+        "icon": "linkedin",
+        "link": "https://www.linkedin.com/in/anabel-rodr%C3%ADguez-564580227/"
+    }, {
+        "name": "Telegram",
+        "icon": "telegram",
+        "link": "https://t.me/Cami1908"
+    }, {
+        "name": "Facebook",
+        "icon": "facebook",
+        "link": "https://www.facebook.com/anabel9203"
+    }]
+}, {
+    "_id": "6",
+    "imageUrl": "assets/images/team/mpaula.jpg",
+    "fullName": "Maria Paula Padrón",
+    "title": "CCO",
+    "subtitle": "Responsable de Comunicación",
+    "abstract": "..."
 }]

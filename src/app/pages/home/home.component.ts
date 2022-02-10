@@ -3,11 +3,13 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnIni
 
 // Third properties
 import { Subject, takeUntil } from 'rxjs';
-import { Howl } from 'howler';
 import { IconNamesEnum } from 'ngx-bootstrap-icons';
 
 // Service
 import { HomeService } from './home.service';
+
+// Animations
+import { athAnimations } from './../../@ath/animations';
 
 // Types
 import { Member, Product } from './home.types';
@@ -25,17 +27,13 @@ import { Member, Product } from './home.types';
     templateUrl: './home.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    animations: athAnimations
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
     // Public properties
     public iconNames = IconNamesEnum;
     public products: Product[] = [];
-    public sound = new Howl({
-        src: 'assets/audio/bg-audio.mp3',
-        loop: true,
-        volume: 0.3
-    });
     public team: Member[] = [];
 
     // Private properties
@@ -57,9 +55,6 @@ export class HomeComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit(): void {
-
-        // Play music background
-        this.sound.load().play();
 
         // Get Products
         this._homeService.products$

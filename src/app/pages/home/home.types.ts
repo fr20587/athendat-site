@@ -26,6 +26,7 @@ export interface Member {
     imageUrl?: string;
     fullName?: string;
     title?: string;
+    subtitle?: string;
     abstract?: string;
     socials?: Social[];
 }
