@@ -7,16 +7,18 @@ import { forkJoin, Observable } from 'rxjs';
 
 // Service
 import { HomeService } from './home.service';
+import { ProductsService } from './../products/products.service';
 
 // Types
-import { Member, Product } from './home.types';
+import { Member } from './home.types';
+import { Product } from './../products/products.types';
 
 /**
  * Home Resolver
  *
  * @export
  * @class HomeResolver
- * @implements {Resolve<Home>}
+ * @implements {Resolve<[Product[], Member[]]>}
  */
 @Injectable({
     providedIn: 'root'
@@ -27,7 +29,8 @@ export class HomeResolver implements Resolve<[Product[], Member[]]> {
      * Constructor
      */
     constructor(
-        private _homeService: HomeService
+        private _homeService: HomeService,
+        private _productsService: ProductsService,
     ) { }
 
     // -----------------------------------------------------------------------------------------------------
@@ -44,8 +47,8 @@ export class HomeResolver implements Resolve<[Product[], Member[]]> {
      */
     public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<[Product[], Member[]]> {
         return forkJoin([
-            this._homeService.getProducts(),
             this._homeService.getTeam(),
+            this._productsService.getProducts(),
         ]);
     }
 }

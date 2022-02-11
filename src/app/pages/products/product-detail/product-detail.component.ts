@@ -6,37 +6,22 @@ import { Subject, takeUntil } from 'rxjs';
 import { IconNamesEnum } from 'ngx-bootstrap-icons';
 
 // Service
-import { HomeService } from './home.service';
-import { ProductsService } from './../products/products.service';
-
-// Animations
-import { athAnimations } from './../../@ath/animations';
+import { ProductsService } from './../products.service';
 
 // Types
-import { Member } from './home.types';
-import { Product } from './../products/products.types';
+import { Product } from './../products.types';
 
-/**
- * Home Component
- *
- * @export
- * @class HomeComponent
- * @implements {OnInit}
- * @implements {OnDestroy}
- */
 @Component({
-    selector: 'ath-home',
-    templateUrl: './home.component.html',
+    selector: 'ath-product-detail',
+    templateUrl: './product-detail.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    animations: athAnimations
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class ProductDetailComponent implements OnInit, OnDestroy {
 
     // Public properties
     public iconNames = IconNamesEnum;
-    public products: Product[] = [];
-    public team: Member[] = [];
+    public selectedProduct: Product = null;
 
     // Private properties
     private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -46,7 +31,6 @@ export class HomeComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _homeService: HomeService,
         private _productsService: ProductsService,
     ) { }
 
@@ -58,30 +42,17 @@ export class HomeComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit(): void {
-
-        // Get Products
-        this._productsService.products$
+        // Get selected product
+        this._productsService.product$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((products) => {
+            .subscribe((product) => {
 
-                // Store the products
-                this.products = products;
+                // Store products
+                this.selectedProduct = product;
 
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
-            });
-
-        // Get team
-        this._homeService.team$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((team) => {
-
-                // Store the team
-                this.team = team;
-
-                // Mark for check
-                this._changeDetectorRef.markForCheck();
-            });
+            })
     }
 
     /**

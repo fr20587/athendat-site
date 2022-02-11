@@ -1,3 +1,4 @@
+import { ProductResolver } from './products/products.resolver';
 // Angular Modules
 import { Routes } from '@angular/router';
 
@@ -15,6 +16,7 @@ import { TermsComponent } from './terms/terms.component';
 import { HomeResolver } from './home/home.resolver';
 import { PrivacyResolver } from './privacy/privacy.resolver';
 import { TermsResolver } from './terms/terms.resolver';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 /**
  * Pages Routes
@@ -61,9 +63,16 @@ export const PAGES_ROUTES: Routes = [
                     privacy: PrivacyResolver
                 }
             },
+            // {
+            //     path: 'products',
+            //     redirectTo: '/home#products'
+            // },
             {
-                path: 'products',
-                component: ProductsComponent
+                path: 'products/:productId',
+                component: ProductDetailComponent,
+                resolve: {
+                    product: ProductResolver
+                }
             },
         ]
     }

@@ -47,7 +47,7 @@
 
             <ng-container *ngFor="let product of products">
                 <li class="lg:mb-3">
-                    <a href="#" class="flex flex-wrap py-3 rounded-sm lg:p-5 hover:bg-gray-100 dark:hover:bg-gray-700">
+                    <a [routerLink]="['/products', product._id]" class="flex flex-wrap py-3 rounded-sm lg:p-5 hover:bg-gray-100 dark:hover:bg-gray-700">
 
                         <!-- Product logo -->
                         <ng-container *ngIf="product.logoUrl">
@@ -57,10 +57,10 @@
                         <div>
 
                             <!-- Product status -->
-                            <span class="inline-block mb-3  text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm" [ngClass]="{'bg-teal-100 dark:bg-teal-200 text-teal-800': product.status === 'Disponible',
-                                    'bg-yellow-100 dark:bg-yellow-200 text-yellow-800': product.status === 'En desarrollo',
-                                    'bg-pink-100 dark:bg-pink-200 text-pink-800': product.status === 'En pruebas'}">
-                                {{product.status}}
+                            <span class="inline-block mb-3  text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm" [ngClass]="{'bg-teal-100 dark:bg-teal-200 text-teal-800': product.state === 'Disponible',
+                                    'bg-yellow-100 dark:bg-yellow-200 text-yellow-800': product.state === 'En desarrollo',
+                                    'bg-pink-100 dark:bg-pink-200 text-pink-800': product.state === 'En pruebas'}">
+                                {{product.state}}
                             </span>
 
                             <!-- Product name -->
@@ -151,10 +151,17 @@
                                         </a>
                                     </ng-container>
 
-                                    <!-- LinkedIn Icon -->
+                                    <!-- GitHub Icon -->
                                     <ng-container *ngIf="social.icon === 'github'">
                                         <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-gem-900 dark:hover:text-white">
                                             <span i-bs [name]="'github'"></span>
+                                        </a>
+                                    </ng-container>
+
+                                    <!-- Instagram Icon -->
+                                    <ng-container *ngIf="social.icon === 'instagram'">
+                                        <a [href]="social.link" target="_blank" class="text-gray-500 hover:text-gem-900 dark:hover:text-white">
+                                            <span i-bs [name]="'instagram'"></span>
                                         </a>
                                     </ng-container>
 

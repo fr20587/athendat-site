@@ -1,34 +1,238 @@
 [{
         "_id": "1",
         "logoUrl": "assets/images/products/logo-athgro.svg",
-        "status": "En pruebas",
+        "coverUrl": "assets/images/products/athgro-admin.png",
+        "link": "https://athendat.site/athgro.market/#/home",
+        "state": "En pruebas",
         "name": "Athgro.Market",
-        "abstract": "Athgro.Market es una plataforma para el comercio minorista en línea de productos agrícolas que permite gestionar todo el proceso desde el la copra de productos a e insumos proveedores hasta la planificación de las entregas a los clientes."
+        "abstract": "Athgro.Market es una plataforma para el comercio minorista en línea de productos agrícolas que permite gestionar todo el proceso desde el la copra de productos a e insumos proveedores hasta la planificación de las entregas a los clientes.",
+        "phases": [{
+                "number": 1,
+                "status": "Planificado",
+                "sections": [{
+                        "name": "Plataforma",
+                        "status": "Completado",
+                        "points": [{
+                            "name": "Web",
+                            "status": "Completado"
+                        }]
+                    },
+                    {
+                        "name": "Autenticación",
+                        "status": "Completado",
+                        "points": [{
+                                "name": "Por formulario",
+                                "status": "Completado"
+                            },
+                            {
+                                "name": "Por Google",
+                                "status": "Completado"
+                            },
+                            {
+                                "name": "Por Facebook",
+                                "status": "Completado"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Funcionalidades",
+                        "status": "Proceso",
+                        "points": [{
+                                "name": "Filtros de productos",
+                                "status": "Proceso"
+                            },
+                            {
+                                "name": "Paginado con scroll infinito",
+                                "status": "Proceso"
+                            },
+                            {
+                                "name": "Captar comentarios sobre la aplicación",
+                                "status": "Proceso"
+                            },
+                            {
+                                "name": "Perfil de usuarios",
+                                "status": "Proceso"
+                            },
+                            {
+                                "name": "Agregar capacidades de aplicación progresiva",
+                                "status": "Completado"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Notificaciones",
+                        "status": "Proceso",
+                        "points": [{
+                                "name": "Via correo electrónico",
+                                "status": "Proceso"
+                            },
+                            {
+                                "name": "Via Telegram",
+                                "status": "Proceso"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pasarelas de pago",
+                        "status": "Completado",
+                        "points": [{
+                            "name": "QvaPay",
+                            "status": "Completado"
+                        }]
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "status": "Planificado",
+                "sections": [{
+                        "name": "Autenticación",
+                        "status": "Planificado",
+                        "points": [{
+                            "name": "Por dos pasos",
+                            "status": "Planificado"
+                        }]
+                    },
+                    {
+                        "name": "Funcionalidades",
+                        "status": "Planificado",
+                        "points": [{
+                                "name": "Mostrar publicidad de vendedores en la página de inicio",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Comentar sobre productos",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Comentar sobre vendedores",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Agregar caching de productos para mejorar el rendimiento",
+                                "status": "Planificado"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Notificaciones",
+                        "status": "Planificado",
+                        "points": [{
+                                "name": "En la aplicación",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Via SMS",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Notificaciones push",
+                                "status": "Planificado"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Pasarelas de pago",
+                        "status": "Planificado",
+                        "points": [{
+                                "name": "Solana Pay",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "ENZONA",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Transfermovil",
+                                "status": "Planificado"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "number": 3,
+                "status": "Planificado",
+                "sections": [{
+                        "name": "Plataforma",
+                        "status": "Planificado",
+                        "points": [{
+                            "name": "Android Nativo",
+                            "status": "Planificado"
+                        }, {
+                            "name": "iOS Nativo",
+                            "status": "Planificado"
+                        }]
+                    },
+                    {
+                        "name": "Autenticación",
+                        "status": "Planificado",
+                        "points": [{
+                            "name": "Por link mágico sin contraseña",
+                            "status": "Planificado"
+                        }]
+                    },
+                    {
+                        "name": "Funcionalidades",
+                        "status": "Planificado",
+                        "points": [{
+                            "name": "Mostrar publicidad de terceros",
+                            "status": "Planificado"
+                        }]
+                    },
+                    {
+                        "name": "Notificaciones",
+                        "status": "Planificado",
+                        "points": [{
+                            "name": "Via WhatsApp",
+                            "status": "Planificado"
+                        }]
+                    },
+                    {
+                        "name": "Pasarelas de pago",
+                        "status": "Planificado",
+                        "points": [{
+                                "name": "Bitcoin",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "PayPal",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "Stripe",
+                                "status": "Planificado"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
         "_id": "2",
         "logoUrl": "assets/images/products/logo-athbook.svg",
-        "status": "En desarrollo",
+        "state": "En desarrollo",
         "name": "Athbook",
         "abstract": "Athbook es una plataforma para la gestión de reservas para todo tipo de negocio que requiera de este proceso, un ejemplo pueden ser: hostales, restaurantes, salones de belleza, clínicas veterinarias, eventos, transfers entre otros muchos."
     },
     {
         "_id": "3",
         "logoUrl": "assets/images/products/logo-erp.svg",
-        "status": "En desarrollo",
+        "state": "En desarrollo",
         "name": "Atherp",
         "abstract": "Atherp es una plataforma para la planificación de recursos empresariales (ERP) ciento por ciento integrable con el resto de nuestras aplicaciones o aplicaciones de terceros."
     },
     {
         "_id": "4",
         "logoUrl": "assets/images/products/logo-erp.svg",
-        "status": "En desarrollo",
+        "state": "En desarrollo",
         "name": "aInvertir",
         "abstract": "aInvertir es una aplicación para la realización de estudios de pre inversión según la legislación aplicable en Cuba capaz de realizar todos los cálculos financieros necesarios para que conozca de antemano si la inversión que piensa hacer tendrá los beneficios deseados en el tiempo previsto."
     },
     {
         "_id": "5",
-        "status": "Disponible",
+        "state": "Disponible",
         "name": "Desarrollo a la medida",
         "abstract": "Si necesita una desarrollo de una aplicación específica para la gestión de su negocio o requiere de una web para posicionar su negocio en Internet, estamos a su disposición."
     }

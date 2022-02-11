@@ -1,19 +1,3 @@
-import { IconName, IconNamesEnum } from "ngx-bootstrap-icons";
-
-/**
- * Product
- *
- * @export
- * @interface Product
- */
-export interface Product {
-    _id?: string;
-    logoUrl?: string;
-    status?: string;
-    name?: string;
-    abstract?: string;
-    description?: string;
-}
 
 /**
  * Member

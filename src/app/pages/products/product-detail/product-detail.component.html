@@ -1,0 +1,142 @@
+<div class="bg-white dark:bg-gray-800">
+
+    <!-- Section introduction -->
+    <section class="py-8 bg-gray-50 lg:py-24 dark:bg-gray-800">
+        <div class="px-4 mx-auto max-w-screen-xl lg:px-12">
+            <div class="grid grid-cols-1 gap-6 items-center lg:grid-cols-2">
+                <div class="mb-5 lg:mb-0">
+
+
+                    <!-- Product logo -->
+                    <div class="flex items-center mb-5">
+
+                        <ng-container *ngIf="selectedProduct.logoUrl">
+                            <img class="h-8" [src]="selectedProduct.logoUrl" [alt]="selectedProduct.name">
+                        </ng-container>
+
+                        <ng-container *ngIf="selectedProduct.secondaryLogoUrl">
+                            <span class="mx-5 text-xl text-gray-900 dark:text-gray-400 lg:text-3xl">+</span>
+                        </ng-container>
+
+                        <ng-container *ngIf="selectedProduct.secondaryLogoUrl">
+                            <img class="h-8" [src]="selectedProduct.secondaryLogoUrl" [alt]="selectedProduct.name">
+                        </ng-container>
+                    </div>
+
+                    <!-- Product name -->
+                    <h2 class="mb-4 text-2xl font-bold text-gray-900 lg:font-extrabold lg:text-4xl lg:leading-snug dark:text-white">
+                        {{selectedProduct.name}}
+                    </h2>
+
+                    <!-- Product abstract -->
+                    <p class="mb-6 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-xl lg:mb-8">
+                        {{selectedProduct.abstract}}
+                    </p>
+
+                    <!-- Product links -->
+                    <div class="block sm:flex">
+                        <ng-container *ngIf="selectedProduct.logoUrl">
+                            <a [href]="[selectedProduct.link]" target="_blank" class="block w-full sm:w-auto sm:inline text-gray-600 bg-white hover:bg-gem-100 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gem-700 dark:hover:text-white dark:border-gray-600 border border-gray-200 font-semibold rounded-lg px-6 py-2.5 text-center mb-3 sm:mb-0 sm:mr-6 items-center justify-center">
+                                <img class="inline mr-2 w-5 h-5" [src]="selectedProduct.logoUrl" [alt]="selectedProduct.name"> Probar demo →
+                            </a>
+                        </ng-container>
+
+                        <a [routerLink]="['/products', selectedProduct._id]" [fragment]="'prices'" class="block w-full sm:w-auto sm:inline-block text-white bg-purple-600 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-6 py-2.5 text-center">
+                            Conocer precios
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product images -->
+                <div>
+                    <img class="w-full dark:hidden" [src]="selectedProduct.coverUrl" [alt]="selectedProduct.name + ' image'">
+                    <img class="hidden w-full dark:block" [src]="selectedProduct.coverDarkUrl" [alt]="selectedProduct.name + ' image dark'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Road map section -->
+    <section class="py-16 bg-white dark:bg-gray-900 lg:py-24" id="roadmap">
+        <div class="max-w-screen-xl px-4 mx-auto lg:px-12">
+
+            <!-- Section title -->
+            <h2 class="mb-4 text-2xl font-bold text-gray-900 lg:font-extrabold lg:text-4xl lg:leading-snug dark:text-white lg:text-center 2xl:px-48">
+                Hoja de ruta del proyecto
+            </h2>
+
+            <!-- Section subtitle -->
+            <p class="mb-10 text-lg font-normal text-gray-500 dark:text-gray-400 lg:text-center lg:text-xl xl:px-40 lg:mb-16">
+                A continuación usted podrá conocer todas las funcionalidades incluirá este producto y su grado de implementación. Al mismo tiempo lo invitamos a compartir con nuestro equipo si considera que alguna de ellas está de más y/o si para su negocio necesita
+                de algo adicional.
+            </p>
+
+            <!-- Grid phases -->
+            <div class="grid lg:grid-cols-3">
+
+                <!-- Road map phase -->
+                <ng-container *ngFor="let phase of selectedProduct.phases; let last = last; let first = first;">
+                    <div class="relative px-6 py-12 mb-8 bg-gray-50 dark:bg-gray-800 lg:py-16 lg:px-8  lg:dark:border-gray-700 lg:mb-0" [ngClass]="{'rounded-l-2xl': first,
+                'lg:border-r lg:border-gray-200': !last, 'rounded-r-2xl': last}">
+
+                        <!-- Phase number -->
+                        <span class="absolute px-3 py-2 text-sm font-medium text-gray-800 transform -translate-x-1/2  rounded-sm  dark:text-white -top-4 left-1/2" [ngClass]="{'bg-gem-100 dark:bg-gem-700': phase.status === 'Completado', 'bg-gray-100 dark:bg-gray-700': phase.status !== 'Completado'}">
+
+                                <!-- Phase completed -->
+                                <div class="flex items-center" [ngClass]="{'block': phase.status === 'Completado', 'hidden': phase.status !== 'Completado'}">
+                                    <span class="inline w-4 h-4 mr-2 text-gem-600" i-bs [name]="'check-lg'"></span> Completado
+                    </div>
+
+                    <!-- Phase status name -->
+                    <div class="flex items-center" [ngClass]="{'block': phase.status !== 'Completado', 'hidden': phase.status === 'Completado'}">
+                        <span class="inline w-4 h-4 mr-2 text-gray-800" i-bs [name]="'clipboard-fill'"></span> Fase {{phase.number}}
+                    </div>
+
+
+                    </span>
+
+                    <!-- Phase sections -->
+                    <ng-container *ngFor="let section of phase.sections">
+                        <div class="flex items-center mb-4">
+
+                            <!-- Phase status icon -->
+                            <div class="flex items-center justify-center w-6 h-6 mr-4 rounded-sm xl:h-8 xl:w-8" [ngClass]="{'bg-gem-200 dark:bg-gem-700': section.status === 'Completado', 'bg-gray-200 dark:bg-gray-700': section.status !== 'Completado'}">
+
+                                <!-- Completed status -->
+                                <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-gem-600" [ngClass]="{'block': section.status === 'Completado', 'hidden': section.status !== 'Completado'}" i-bs [name]="'check-lg'"></span>
+
+                                <!-- Planning status -->
+                                <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-gray-600 dark:text-gray-400" [ngClass]="{'block': section.status === 'Planificado', 'hidden': section.status !== 'Planificado'}" i-bs [name]="'calendar-range-fill'"></span>
+
+                                <!-- Working status -->
+                                <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-gray-600 dark:text-gray-400" [ngClass]="{'block': section.status === 'Proceso', 'hidden': section.status !== 'Proceso'}" i-bs [name]="'gear-fill'"></span>
+                            </div>
+
+                            <!-- Phase section name -->
+                            <h3 class="text-lg font-bold  xl:text-xl" [ngClass]="{'text-gem-600 dark:text-gem-500': section.status === 'Completado', 'text-gray-600 dark:text-gray-400': section.status !== 'Completado'}">
+                                {{section.name}}
+                            </h3>
+                        </div>
+
+                        <!-- Phase section points name -->
+                        <ul class="pl-10 mb-8 list-disc xl:pl-16">
+                            <ng-container *ngFor="let point of section.points">
+                                <li [ngClass]="{'text-gem-600 dark:text-gem-500': point.status === 'Completado', 'text-gray-600 dark:text-gray-400': point.status !== 'Completado'}">
+                                    {{point.name}}</li>
+                            </ng-container>
+                        </ul>
+                    </ng-container>
+            </div>
+            </ng-container>
+
+        </div>
+
+        <!-- Highlighted notes -->
+        <p class="m-auto mt-8 text-sm italic text-center text-gray-400 dark:text-gray-500 lg:max-w-2xl">
+            * Los textos resaltados y con el icono de "check" son las funcionalidades que ya se encuentran implementadas en la aplicación, el ícono de "calendario" representa que es una funcionalidad planificada mientras el ícono de la "rueda dentada" quiere decir
+            que se está trabajando actualmente en la funcionalidad.
+        </p>
+</div>
+</section>
+
+</div>

@@ -18,6 +18,7 @@ import { TermsComponent } from './terms/terms.component';
 
 // Routes
 import { PAGES_ROUTES } from './pages.routing';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { PAGES_ROUTES } from './pages.routing';
         TermsComponent,
         ProductsComponent,
         PrivacyComponent,
+        ProductDetailComponent,
     ],
     imports: [
         LayoutModule,

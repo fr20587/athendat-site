@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 // Types
-import { Member, Product } from './home.types';
+import { Member } from './home.types';
 
 
 /**
@@ -22,7 +22,6 @@ export class HomeService {
 
 
     // Private properties
-    private _products: BehaviorSubject<Product[]> = new BehaviorSubject([]);
     private _team: BehaviorSubject<Member[]> = new BehaviorSubject([]);
 
 
@@ -44,13 +43,6 @@ export class HomeService {
         return this._team.asObservable();
     }
 
-    /**
-     * Getter for products
-     */
-    get products$(): Observable<Product[]> {
-        return this._products.asObservable();
-    }
-
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
@@ -66,14 +58,4 @@ export class HomeService {
         );
     }
 
-    /**
-     * Get Products
-     */
-    public getProducts(): Observable<Product[]> {
-        return this._httpClient.get<Product[]>('assets/data/products.json').pipe(
-            tap((response) => {
-                this._products.next(response);
-            })
-        );
-    }
 }

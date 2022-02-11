@@ -108,9 +108,22 @@
     }]
 }, {
     "_id": "6",
-    "imageUrl": "assets/images/team/mpaula.jpg",
-    "fullName": "Maria Paula Padrón",
+    "imageUrl": "assets/images/team/mpaula.jfif",
+    "fullName": "María Paula Padrón Gorrin",
     "title": "CCO",
     "subtitle": "Responsable de Comunicación",
-    "abstract": "..."
+    "abstract": "Licenciada en Comunicación, estratega, emprendedora, apasionada por el marketing, las relaciones públicas, la fotografía, las artes, los medios, las mascotas, el diseño y los libros.",
+    "socials": [{
+        "name": "Twitter",
+        "icon": "twitter",
+        "link": "https://twitter.com/MpPadron1"
+    }, {
+        "name": "Instagram",
+        "icon": "instagram",
+        "link": "https://www.instagram.com/mariapaulapadron"
+    }, {
+        "name": "Facebook",
+        "icon": "facebook",
+        "link": "https://www.facebook.com/mariapaula.padron"
+    }]
 }]

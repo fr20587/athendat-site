@@ -55,6 +55,9 @@ export class AppComponent implements OnInit, OnDestroy {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
+
+        // Stop music background
+        this.sound.stop();
     }
 
     /**
