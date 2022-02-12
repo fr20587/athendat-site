@@ -207,7 +207,18 @@
                     }
                 ]
             }
-        ]
+        ],
+        "currentVersion": "v0.0.1",
+        "versionChanges": [{
+            "releaseDate": "15/02/2022",
+            "version": "v0.0.1",
+            "changes": [{
+                "section": "Lanzamiento inicial",
+                "points": [
+                    "Funcionalidades de producto mínimo viable para probar el mercado"
+                ]
+            }]
+        }]
     },
     {
         "_id": "2",

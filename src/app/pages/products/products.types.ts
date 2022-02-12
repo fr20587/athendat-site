@@ -17,6 +17,8 @@ export interface Product {
     abstract?: string;
     description?: string;
     phases?: Phase[];
+    currentVersion?: string;
+    versionChanges?: VersionChange[];
 }
 
 interface Phase {
@@ -34,6 +36,17 @@ interface Section {
 interface Point {
     name?: string;
     status?: Status;
+}
+
+interface VersionChange {
+    releaseDate?: string;
+    version?: string;
+    changes?: Change[];
+}
+
+interface Change {
+    section?: string;
+    points?: string[];
 }
 
 type State = 'En desarrollo' | 'Disponible' | 'En pruebas';
