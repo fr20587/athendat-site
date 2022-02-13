@@ -19,6 +19,8 @@ export interface Product {
     phases?: Phase[];
     currentVersion?: string;
     versionChanges?: VersionChange[];
+    plans?: Plan[];
+    planFeatures?: PlanSection[];
 }
 
 interface Phase {
@@ -47,6 +49,26 @@ interface VersionChange {
 interface Change {
     section?: string;
     points?: string[];
+}
+
+interface Plan {
+    name?: string;
+    cost?: string;
+    description?: string;
+    planSection?: PlanSection[];
+}
+
+interface PlanSection {
+    name?: string;
+    features?: Feature[];
+}
+interface Feature {
+    name?: string;
+    description?: string;
+    observation?: string;
+    planA?: boolean;
+    planB?: boolean;
+    planC?: boolean;
 }
 
 type State = 'En desarrollo' | 'Disponible' | 'En pruebas';

@@ -2,24 +2,24 @@
     <div class="container flex flex-wrap justify-between items-center mx-auto">
 
         <!-- Imagotipo -->
-        <ng-container *ngIf="screenWidth < 769">
+        <ng-container *ngIf="screenWidth > 769">
             <a [routerLink]="['/home']" class="imagotipo">
-                <img [src]="'assets/images/logo/imagotipo.svg'" class="mr-4 w-10" alt="ATHENDAT Logo">
+                <img [src]="'assets/images/logo/imagotipo.svg'" class="mr-4 w-60" alt="ATHENDAT Logo">
             </a>
         </ng-container>
 
 
         <!-- Isotipo -->
-        <ng-container *ngIf="screenWidth > 769">
+        <ng-container *ngIf="screenWidth < 769">
             <a [routerLink]="['/home']" class="isotipo">
-                <img [src]="'assets/images/logo/isotipo.svg'" class="mr-4 w-60" alt="ATHENDAT Logo">
+                <img [src]="'assets/images/logo/isotipo.svg'" class="mr-4 w-10" alt="ATHENDAT Logo">
             </a>
         </ng-container>
 
         <!-- Mobile Menu -->
         <div class="flex md:order-2">
 
-            <button [routerLink]="['/contact']" class="text-white bg-gem-900 hover:bg-gem-800 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gem-600 dark:hover:bg-gem-700 dark:focus:ring-gem-800">
+            <button [routerLink]="['/contact']" class="text-white bg-gem-800 hover:bg-gem-700 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gem-600 dark:hover:bg-gem-700 dark:focus:ring-gem-800">
                 Contáctenos
             </button>
 

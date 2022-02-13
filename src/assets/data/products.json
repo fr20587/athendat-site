@@ -157,12 +157,14 @@
                         "name": "Plataforma",
                         "status": "Planificado",
                         "points": [{
-                            "name": "Android Nativo",
-                            "status": "Planificado"
-                        }, {
-                            "name": "iOS Nativo",
-                            "status": "Planificado"
-                        }]
+                                "name": "Android Nativo",
+                                "status": "Planificado"
+                            },
+                            {
+                                "name": "iOS Nativo",
+                                "status": "Planificado"
+                            }
+                        ]
                     },
                     {
                         "name": "Autenticación",
@@ -218,7 +220,142 @@
                     "Funcionalidades de producto mínimo viable para probar el mercado"
                 ]
             }]
-        }]
+        }],
+        "plans": [{
+                "name": "Pequeño Vendedor",
+                "cost": "0.00 CUP/mes",
+                "description": "El costo inicial del plan Pequeño Vendedor es de nulo y está pensados en los pequeños negocios que necesiten solo las herramientas básicas para comenzar a vender a traves de Internet. El cliente solo deberá pagar el equivalente a 6.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+            },
+            {
+                "name": "Vendedor Minorista",
+                "cost": "987.00 CUP/mes",
+                "description": "El plan Vendedor Minorista está pensados en para aquellos negocios que tienen una cadena de suministros estable quieran comenzar a vender a traves de Internet llegando al mayor número de clientes, además del costo inicial el cliente deberá pagar el equivalente a 6.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+            }
+        ],
+        "planFeatures": [{
+                "name": "Componentes Básicos",
+                "features": [{
+                        "name": "Gestión de productos",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de categorías",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de órdenes",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de mensajeros",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de proveedores",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de diapositivas",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de varios negocios",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión del negocio por varios usuarios",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de clientes",
+                        "planA": true,
+                        "planB": true
+                    }
+                ]
+            },
+            {
+                "name": "Gestión de Cobros",
+                "features": [{
+                        "name": "Gestión de cobro en efectivo",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por QvaPay",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por ENZONA",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por Transfermovil",
+                        "observation": "Cuando esté disponible",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por Solana Pay",
+                        "observation": "Cuando esté disponible",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por Bitcoin",
+                        "observation": "Cuando esté disponible",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Gestión de cobro por PayPal",
+                        "observation": "Cuando esté disponible",
+                        "planA": true,
+                        "planB": true
+                    }
+                ]
+            },
+            {
+                "name": "Notificaciones",
+                "features": [{
+                        "name": "Notificaciones de nuevas órdenes por correo electrónico",
+                        "planA": true,
+                        "planB": true
+                    },
+                    {
+                        "name": "Notificaciones de nuevas órdenes por SMS",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Notificaciones de nuevas órdenes por Telegram",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Notificaciones de nuevas órdenes por WhatsApp",
+                        "observation": "Cuando esté disponible",
+                        "planA": false,
+                        "planB": true
+                    },
+                    {
+                        "name": "Notificar a los clientes de nuevas ofertas mediante notificaciones push",
+                        "observation": "Cuando esté disponible",
+                        "planA": false,
+                        "planB": true
+                    }
+                ]
+            }
+        ]
     },
     {
         "_id": "2",
