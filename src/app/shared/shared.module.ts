@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 // Third's Modules
 import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
 
+// Modules
+import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   exports: [
@@ -15,6 +18,7 @@ import { NgxBootstrapIconsModule } from 'ngx-bootstrap-icons';
     ReactiveFormsModule,
     RouterModule,
     NgxBootstrapIconsModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }

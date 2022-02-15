@@ -1,5 +1,6 @@
 // Angular Modules
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 // Third properties
 import { Subject, takeUntil } from 'rxjs';
@@ -9,7 +10,8 @@ import { IconNamesEnum } from 'ngx-bootstrap-icons';
 import { ProductsService } from './../products.service';
 
 // Types
-import { Product } from './../products.types';
+import { Plan, Product } from './../products.types';
+import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
 
 @Component({
     selector: 'ath-product-detail',
@@ -31,6 +33,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
+        private _dialog: MatDialog,
         private _productsService: ProductsService,
     ) { }
 
@@ -62,6 +65,26 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
+    }
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Public methods
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * Open Payment dialog
+     *
+     * @param {Plan} plan
+     * @memberof ProductDetailComponent
+     */
+    public openPaymentDialog(plan: Plan) {
+        this._dialog.open(PaymentDialogComponent, {
+            panelClass: 'ath-dialog-panel',
+            data: {
+                productName: this.selectedProduct.name,
+                plan
+            },
+        });
     }
 
 }

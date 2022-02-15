@@ -51,7 +51,7 @@ interface Change {
     points?: string[];
 }
 
-interface Plan {
+export interface Plan {
     name?: string;
     cost?: string;
     description?: string;

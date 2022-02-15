@@ -41,7 +41,7 @@
                             </a>
                         </ng-container>
 
-                        <a [routerLink]="['/products', selectedProduct._id]" [fragment]="'prices'" class="block w-full sm:w-auto sm:inline-block text-white bg-picton-600 hover:bg-picton-800 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-base px-6 py-2.5 text-center">
+                        <a [routerLink]="['/products', selectedProduct._id]" [fragment]="'pricing'" class="block w-full sm:w-auto sm:inline-block text-white bg-gem-600 hover:bg-gem-800 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-base px-6 py-2.5 text-center">
                             Conocer precios
                         </a>
                     </div>
@@ -80,12 +80,12 @@
                 'lg:border-r lg:border-gray-200': !last, 'rounded-r-md': last}">
 
                         <!-- Phase number -->
-                        <span class="absolute px-3 py-2 text-sm font-medium text-gray-800 transform -translate-x-1/2  rounded-sm  dark:text-white -top-4 left-1/2" [ngClass]="{'bg-gem-100 dark:bg-picton-700': phase.status === 'Completado', 'bg-gray-100 dark:bg-gray-700': phase.status !== 'Completado'}">
+                        <span class="absolute px-3 py-2 text-sm font-medium text-gray-800 transform -translate-x-1/2  rounded-sm  dark:text-white -top-4 left-1/2" [ngClass]="{'bg-gem-100 dark:bg-gem-700': phase.status === 'Completado', 'bg-gray-100 dark:bg-gray-700': phase.status !== 'Completado'}">
 
                             <!-- Phase completed -->
                             <div class="flex items-center"
                                 [ngClass]="{'block': phase.status === 'Completado', 'hidden': phase.status !== 'Completado'}">
-                                <span class="inline w-4 h-4 mr-2 text-picton-600" i-bs [name]="'check-lg'"></span> Completado
+                                <span class="inline w-4 h-4 mr-2 text-gem-600" i-bs [name]="'check-lg'"></span> Completado
                     </div>
 
                     <!-- Phase status name -->
@@ -101,10 +101,10 @@
                         <div class="flex items-center mb-4">
 
                             <!-- Phase status icon -->
-                            <div class="flex items-center justify-center w-6 h-6 mr-4 rounded-sm xl:h-8 xl:w-8" [ngClass]="{'bg-picton-200 dark:bg-picton-700': section.status === 'Completado', 'bg-gray-200 dark:bg-gray-700': section.status !== 'Completado'}">
+                            <div class="flex items-center justify-center w-6 h-6 mr-4 rounded-sm xl:h-8 xl:w-8" [ngClass]="{'bg-gem-200 dark:bg-gem-700': section.status === 'Completado', 'bg-gray-200 dark:bg-gray-700': section.status !== 'Completado'}">
 
                                 <!-- Completed status -->
-                                <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-picton-600" [ngClass]="{'block': section.status === 'Completado', 'hidden': section.status !== 'Completado'}" i-bs [name]="'check-lg'"></span>
+                                <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-gem-600" [ngClass]="{'block': section.status === 'Completado', 'hidden': section.status !== 'Completado'}" i-bs [name]="'check-lg'"></span>
 
                                 <!-- Planning status -->
                                 <span class="flex items-center justify-center w-4 h-4 xl:w-6 xl:h-6 text-gray-600 dark:text-gray-400" [ngClass]="{'block': section.status === 'Planificado', 'hidden': section.status !== 'Planificado'}" i-bs [name]="'calendar-range-fill'"></span>
@@ -114,7 +114,7 @@
                             </div>
 
                             <!-- Phase section name -->
-                            <h3 class="text-lg font-bold  xl:text-xl" [ngClass]="{'text-picton-600 dark:text-picton-500': section.status === 'Completado', 'text-gray-600 dark:text-gray-400': section.status !== 'Completado'}">
+                            <h3 class="text-lg font-bold  xl:text-xl" [ngClass]="{'text-gem-600 dark:text-gem-500': section.status === 'Completado', 'text-gray-600 dark:text-gray-400': section.status !== 'Completado'}">
                                 {{section.name}}
                             </h3>
                         </div>
@@ -122,7 +122,7 @@
                         <!-- Phase section points name -->
                         <ul class="pl-10 mb-8 list-disc xl:pl-16">
                             <ng-container *ngFor="let point of section.points">
-                                <li [ngClass]="{'text-picton-600 dark:text-picton-500': point.status === 'Completado', 'text-gray-600 dark:text-gray-400': point.status !== 'Completado'}">
+                                <li [ngClass]="{'text-gem-600 dark:text-gem-500': point.status === 'Completado', 'text-gray-600 dark:text-gray-400': point.status !== 'Completado'}">
                                     {{point.name}}</li>
                             </ng-container>
                         </ul>
@@ -171,8 +171,8 @@
 
                     <!-- Plan cost -->
                     <span class="block mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-                        {{plan.cost}}
-                    </span>
+                            {{plan.cost}}
+                        </span>
 
                     <!-- Plan description -->
                     <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">
@@ -180,9 +180,9 @@
                     </p>
 
                     <!-- Action button -->
-                    <button class="block inline-flex justify-center items-center py-2 px-6 mb-3 w-full text-base font-medium text-center text-white bg-gem-600 rounded-sm hover:bg-gem-800 focus:outline-none focus:ring-4 focus:ring-gem-300 md:mr-5 md:mb-0">
-                        Empezar a Vender
-                    </button>
+                    <button (click)="openPaymentDialog(plan)" class="inline-flex justify-center items-center py-2 px-6 mb-3 w-full text-base font-medium text-center text-white bg-gem-600 rounded-sm hover:bg-gem-800 focus:outline-none focus:ring-4 focus:ring-gem-300 md:mr-5 md:mb-0">
+                            Empezar a Vender
+                        </button>
                 </div>
             </ng-container>
 
@@ -266,8 +266,8 @@
 
                     <!-- Plan cost -->
                     <span class="block mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">
-                                {{plan.cost}}
-                            </span>
+                            {{plan.cost}}
+                        </span>
 
                     <!-- Plan description -->
                     <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">
@@ -275,9 +275,9 @@
                     </p>
 
                     <!-- Action button -->
-                    <button class="block inline-flex justify-center items-center py-2 px-6 mb-3 w-full text-base font-medium text-center text-white bg-gem-600 rounded-sm hover:bg-gem-800 focus:outline-none focus:ring-4 focus:ring-gem-300 md:mr-5 md:mb-0">
-                                Empezar a Vender
-                            </button>
+                    <button class="inline-flex justify-center items-center py-2 px-6 mb-3 w-full text-base font-medium text-center text-white bg-gem-600 rounded-sm hover:bg-gem-800 focus:outline-none focus:ring-4 focus:ring-gem-300 md:mr-5 md:mb-0" (click)="openPaymentDialog(plan)">
+                            Empezar a Vender
+                        </button>
                 </div>
             </ng-container>
 
@@ -308,8 +308,8 @@
                     </ng-container>
 
                     <span class="text-gray-900 dark:text-white text-lg lg:text-3xl font-bold ml-4">
-                        {{selectedProduct.name}} - {{selectedProduct.currentVersion}}
-                    </span>
+                            {{selectedProduct.name}} - {{selectedProduct.currentVersion}}
+                        </span>
                 </div>
 
                 <!-- Release Date -->
