@@ -10,7 +10,8 @@ import { Member } from './home.types';
 
 // Environment
 import { environment } from 'src/environments/environment';
-const API_URL = process.env['API_URL'] || environment.API_URL;
+// const API_URL = process.env['API_URL'] || environment.API_URL;
+const API_URL = environment.API_URL;
 
 /**
  * Home Service

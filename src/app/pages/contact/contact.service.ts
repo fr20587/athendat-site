@@ -10,7 +10,8 @@ import { Message } from './contact.types';
 
 // Environment
 import { environment } from 'src/environments/environment';
-const API_URL = process.env['API_URL'] || environment.API_URL;
+// const API_URL = process.env['API_URL'] || environment.API_URL;
+const API_URL = environment.API_URL;
 
 /**
  * Contact Service
@@ -67,6 +68,6 @@ export class ContactService {
      * @memberof ContactService
      */
     public sendMessage(message: Message): Observable<{ok: boolean, message: string}> {
-        return this._httpClient.post<{ok: boolean, message: string}>(`${API_URL}/bot`, { message });
+        return this._httpClient.post<{ok: boolean, message: string}>(`${API_URL}/bot`,  message );
     }
 }

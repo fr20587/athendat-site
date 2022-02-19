@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 
 // Global Variables
 import { environment } from './../../../environments/environment';
-const API_KEY = environment.API_KEY || process.env['API_KEY'];
+// const API_KEY = environment.API_KEY || process.env['API_KEY'];
+const API_KEY = environment.API_KEY;
 
 @Injectable({
     providedIn: 'root'

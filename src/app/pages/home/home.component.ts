@@ -136,6 +136,9 @@ export class HomeComponent implements OnInit, OnDestroy {
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((response) => {
 
+                // Change loading status
+                this.isLoading = false;
+
                 // Store response message
                 this.alertMessage = response.message;
 

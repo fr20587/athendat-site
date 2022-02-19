@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
      */
     ngOnInit() {
         // Play music background
-        // this.sound.play();
+        this.sound.play();
     }
 
     /**
