@@ -3,31 +3,29 @@ import { Injectable } from '@angular/core';
 import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 
 // Third's Modules
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 // Service
-import { ProductsService } from './products.service';
+import { ContactService } from './contact.service';
 
-// Types
-import { Product } from './products.types';
 
 /**
- * Product Resolver
+ * Contact Resolver
  *
  * @export
- * @class ProductResolver
- * @implements {Resolve<Product>}
+ * @class ContactResolver
+ * @implements {Resolve<Contact>}
  */
 @Injectable({
     providedIn: 'root'
 })
-export class ProductResolver implements Resolve<Product> {
+export class ContactResolver implements Resolve<string[]> {
 
     /**
      * Constructor
      */
     constructor(
-        private _productsService: ProductsService,
+        private _contactService: ContactService,
     ) { }
 
     // -----------------------------------------------------------------------------------------------------
@@ -39,10 +37,10 @@ export class ProductResolver implements Resolve<Product> {
      *
      * @param {ActivatedRouteSnapshot} route
      * @param {RouterStateSnapshot} state
-     * @return {Observable<Product>}
-     * @memberof ProductResolver
+     * @return {Observable<string[]>}
+     * @memberof ContactResolver
      */
-    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product> {
-        return this._productsService.getProductById(route.params['productId']);
+    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string[]> {
+        return this._contactService.getMessageCategories();
     }
 }

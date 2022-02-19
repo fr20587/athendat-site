@@ -223,13 +223,13 @@
         }],
         "plans": [{
                 "name": "Pequeño Vendedor",
-                "cost": "0.00 CUP/mes",
-                "description": "El costo inicial del plan Pequeño Vendedor es de nulo y está pensados en los pequeños negocios que necesiten solo las herramientas básicas para comenzar a vender a traves de Internet. El cliente solo deberá pagar el equivalente a 6.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+                "cost": 0,
+                "description": "El costo inicial del plan Pequeño Vendedor es de nulo y está pensados en los pequeños negocios que necesiten solo las herramientas básicas para comenzar a vender a traves de Internet. El cliente solo deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
             },
             {
                 "name": "Vendedor Minorista",
-                "cost": "987.00 CUP/mes",
-                "description": "El plan Vendedor Minorista está pensados en para aquellos negocios que tienen una cadena de suministros estable quieran comenzar a vender a traves de Internet llegando al mayor número de clientes, además del costo inicial el cliente deberá pagar el equivalente a 6.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+                "cost": 987,
+                "description": "El plan Vendedor Minorista está pensados en para aquellos negocios que tienen una cadena de suministros estable quieran comenzar a vender a traves de Internet llegando al mayor número de clientes, además del costo inicial el cliente deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
             }
         ],
         "planFeatures": [{

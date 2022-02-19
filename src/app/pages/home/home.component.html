@@ -216,13 +216,14 @@
                 </div>
                 <div>
 
-                    <form>
+                    <form [formGroup]="subscriberForm" #subscriberNgForm="ngForm">
                         <div data-style="clean">
                             <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields lg:grid xl:grid-cols-3 2xl:grid-cols-4 lg:gap-4">
                                 <div class="formkit-field xl:col-span-2 2xl:col-span-3 mb-4 lg:mb-0">
-                                    <input type="email" class="formkit-input rounded-sm p-4 w-full border border-transparent focus:outline-none focus:ring-2 focus:ring-gem-600 focus:border-gem-600" name="email_address" aria-label="Ingrese su correo" placeholder="Ingrese su correo" required="">
+                                    <input type="email" class="formkit-input rounded-sm p-4 w-full border border-transparent focus:outline-none focus:ring-2 focus:ring-gem-600 focus:border-gem-600" aria-label="Ingrese su correo" placeholder="Ingrese su correo" required formControlName="email">
                                 </div>
-                                <button data-element="submit" class="formkit-submit w-full text-white bg-gem-500 hover:bg-gem-700 font-semibold rounded-sm text-base px-5 py-3 text-center border border-gem-900 focus:outline-none focus:ring-2 focus:ring-gem-600 focus:border-gem-600">
+                                <button class="formkit-submit w-full text-white bg-gem-500 hover:bg-gem-700 font-semibold rounded-sm text-base px-5 py-3 text-center border border-gem-900 focus:outline-none focus:ring-2 focus:ring-gem-600 focus:border-gem-600" (click)="registerEmail()"
+                                    [disabled]="subscriberForm.invalid" [ngClass]="{'cursor-not-allowed': subscriberForm.invalid}">
                                     Enviar
                                 </button>
                             </div>
@@ -230,6 +231,12 @@
                     </form>
                     <p class="text-gray-300 text-sm font-medium mt-4">Nuevos productos y actualizaciones, nunca spam.
                     </p>
+
+                    <!-- Alert message -->
+                    <ng-container *ngIf="showAlert">
+                        <p class="text-green-300 text-sm font-medium mt-4">{{alertMessage}}
+                        </p>
+                    </ng-container>
                 </div>
             </div>
         </div>

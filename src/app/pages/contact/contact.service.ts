@@ -6,27 +6,25 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 
 // Types
-import { Member } from './home.types';
+import { Message } from './contact.types';
 
 // Environment
 import { environment } from 'src/environments/environment';
 const API_URL = process.env['API_URL'] || environment.API_URL;
 
 /**
- * Home Service
+ * Contact Service
  *
  * @export
- * @class HomeService
+ * @class ContactService
  */
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
-export class HomeService {
-
+export class ContactService {
 
     // Private properties
-    private _team: BehaviorSubject<Member[]> = new BehaviorSubject([]);
-
+    private _messageCategories: BehaviorSubject<string[]> = new BehaviorSubject([]);
 
     /**
      * Constructor
@@ -40,10 +38,10 @@ export class HomeService {
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Getter for team
+     * Getter for messageCategories
      */
-    get team$(): Observable<Member[]> {
-        return this._team.asObservable();
+    get messageCategories$(): Observable<string[]> {
+        return this._messageCategories.asObservable();
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -51,23 +49,24 @@ export class HomeService {
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Get Team
+     * Get message categories
      */
-    public getTeam(): Observable<Member[]> {
-        return this._httpClient.get<Member[]>('assets/data/team.json').pipe(
-            tap((response) => {
-                this._team.next(response);
+    public getMessageCategories(): Observable<string[]> {
+        return this._httpClient.get<string[]>('assets/data/message-categories.json').pipe(
+            tap((messageCategories) => {
+                this._messageCategories.next(messageCategories);
             })
         );
     }
 
     /**
-     * Registers subscriber
+     * Send message
      *
-     * @param data
+     * @param {Message} message
+     * @return {Observable<{ok: boolean, message: string}>}
+     * @memberof ContactService
      */
-    public registerSubscriber(data: { active: boolean; email: string; }): Observable<{ ok: boolean; message: string; }> {
-        return this._httpClient.post<{ok: boolean, message: string}>(`${API_URL}/subscribers`, data )
+    public sendMessage(message: Message): Observable<{ok: boolean, message: string}> {
+        return this._httpClient.post<{ok: boolean, message: string}>(`${API_URL}/bot`, { message });
     }
-
 }

@@ -17,41 +17,46 @@
 
                 <!-- Contact Form -->
                 <div class="col-span-2">
-                    <form>
+                    <form [formGroup]="contactForm" #contactNgForm="ngForm">
                         <div class="grid xl:grid-cols-2 xl:gap-6">
-                            <!-- Full name -->
+                            <!-- Full name field-->
                             <div class="relative z-0 mb-6 w-full group">
-                                <input type="text" name="floating_fullname" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
-                                    placeholder=" " required="">
+                                <input type="text" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
+                                    placeholder=" " required formControlName="fullName">
                                 <label for="floating_fullname" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gem-600 peer-focus:dark:text-gem-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                     Nombre completo
                                 </label>
                             </div>
 
-                            <!-- Email -->
+                            <!-- Email field-->
                             <div class="relative z-0 mb-6 w-full group">
-                                <input type="email" name="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
-                                    placeholder=" " required="">
+                                <input type="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
+                                    placeholder=" " required formControlName="email">
                                 <label for="floating_email" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gem-600 peer-focus:dark:text-gem-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                     Correo electrónico
                                 </label>
                             </div>
                         </div>
 
+                        <!-- Message category field -->
                         <div class="grid xl:grid-cols-2 xl:gap-6">
                             <div class="relative z-0 mb-6 w-full group">
-                                <select id="floating_topic" class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer">
-                                    <option class="p-2" selected>Este comentario es sobre...</option>
-                                    <option class="p-2">Registro de mi negocio</option>
-                                    <option class="p-2">Uso de la plataforma</option>
-                                    <option class="p-2">Necesito una nueva característica</option>
-                                    <option class="p-2">Pago del servicio</option>
-                                    <option class="p-2">Otros</option>
+                                <select class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
+                                    formControlName="category">
+                                    <option class="p-2" [value]="null"selected>Este comentario es sobre...</option>
+
+                                    <!-- List of messages categories -->
+                                    <ng-container *ngFor="let category of messageCategories">
+                                        <option class="p-2" [value]="category">{{category}}</option>
+                                    </ng-container>
+
                                 </select>
                             </div>
+
+                            <!-- Subject field -->
                             <div class="relative z-0 mb-6 w-full group">
                                 <input type="text" name="floating_subject" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
-                                    placeholder=" " required="">
+                                    placeholder=" " required formControlName="subject">
                                 <label for="floating_subject" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gem-600 peer-focus:dark:text-gem-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                     Asunto
                                 </label>
@@ -62,15 +67,99 @@
                         <!-- Comments -->
                         <div class="relative z-0 mb-6 w-full group">
                             <textarea id="floating_messages" rows="4" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-gem-500 focus:outline-none focus:ring-0 focus:border-gem-600 peer"
-                                placeholder=" "></textarea>
+                                placeholder=" " formControlName="message"></textarea>
                             <label for="floating_messages" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-gem-600 peer-focus:dark:text-gem-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Escriba sus comentarios...
                             </label>
                         </div>
 
+                        <!-- Send message button -->
+                        <button class="text-white bg-gem-700 hover:bg-gem-800 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gem-600 dark:hover:bg-gem-700 dark:focus:ring-gem-800" [ngClass]="{'bg-gray-300 hover:bg-gray-300 cursor-not-allowed': contactForm.invalid}"
+                            (click)="sendMessage()" [disabled]="(contactForm.invalid || isLoading)">
 
-                        <button type="submit" class="text-white bg-gem-700 hover:bg-gem-800 focus:ring-4 focus:ring-gem-300 font-medium rounded-sm text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gem-600 dark:hover:bg-gem-700 dark:focus:ring-gem-800">Enviar</button>
+
+                            <ng-container *ngIf="!isLoading">
+                                <div class="flex items-center justify-center">
+                                    Enviar <span class="w-5 h-5 ml-3 pt-0.5 inline" i-bs [name]="'send'"></span>
+                                </div>
+                            </ng-container>
+
+                            <!-- Spinner -->
+                            <ng-container *ngIf="isLoading">
+                                <svg role="status"
+                                    class="inline mr-2 w-6 h-6 text-gem-600 animate-spin dark:text-gray-600 fill-gray-200"
+                                    viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                        fill="currentFill" />
+                                </svg>
+                            </ng-container>
+                        </button>
                     </form>
+
+                    <!-- Confirmation alert -->
+                    <ng-container *ngIf="isConfirmationAlert">
+                        <div class="flex flex-col my-4">
+
+                            <!-- Progress bar -->
+                            <div class="w-full bg-green-100 rounded-t-sm h-1.5 dark:bg-green-200">
+                                <div class="bg-green-200 h-1.5 rounded-t-sm dark:bg-green-300" style="width: 45%"></div>
+                            </div>
+
+                            <div class="flex p-4  text-sm text-green-700 bg-green-100 rounded-b-sm dark:bg-green-200 dark:text-green-800" role="alert">
+
+
+                                <!-- Icon -->
+                                <svg class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+
+                                <!-- Message -->
+                                <div>
+                                    <span class="font-medium">Confirmación!</span> {{alertMessage}}.
+                                </div>
+
+                                <!-- Close button -->
+                                <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-green-100 text-green-500 rounded-sm focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8 dark:bg-green-200 dark:text-green-600 dark:hover:bg-green-300" data-collapse-toggle="alert-3"
+                                    aria-label="Cerrar" (click)="closeAlert('confirmation')">
+                                <span class="sr-only">Cerrar</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                              </button>
+                            </div>
+                        </div>
+                    </ng-container>
+
+                    <!-- Error alert -->
+                    <ng-container *ngIf="isErrorAlert">
+                        <div class="flex flex-col my-4">
+                            <!-- Progress bar -->
+                            <div class="w-full bg-red-100 rounded-t-sm h-1.5 dark:bg-red-700">
+                                <div class="bg-red-200 h-1.5 rounded-t-sm dark:bg-red-300" style="width: 45%"></div>
+                            </div>
+
+                            <div class="flex p-4 text-sm text-red-700 bg-red-100 rounded-b-sm dark:bg-red-200 dark:text-red-800" role="alert">
+
+                                <!-- Icon -->
+                                <svg class="inline flex-shrink-0 mr-3 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+
+                                <!-- Message -->
+                                <div>
+                                    <span class="font-medium">Error!</span> {{alertMessage}}.
+                                </div>
+
+                                <!-- Close button -->
+                                <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-red-100 text-red-500 rounded-sm focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-red-200 dark:text-red-600 dark:hover:bg-red-300" data-collapse-toggle="alert-2"
+                                    aria-label="Cerrar" (click)="closeAlert('error')">
+                                    <span class="sr-only">Cerrar</span>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                                  </button>
+                            </div>
+                        </div>
+                    </ng-container>
+
+
+
                 </div>
 
                 <!-- Contact Info -->
@@ -107,7 +196,7 @@
     <div class="px-4 mx-auto max-w-screen-xl lg:px-12">
         <div class="p-10 divide-x sm:justify-around w-full bg-white rounded-sm border border-gray-200 shadow-md  dark:bg-gray-800 dark:border-gray-700 flex flex-col gap-10 sm:flex-row">
 
-            <a class="group cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-6 rounded-sm sm:w-1/2" [routerLink]="['/products']">
+            <a class="group cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-6 rounded-sm sm:w-1/2" [routerLink]="['/home']" [fragment]="'products'">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Productos y Servicios
                 </h5>
@@ -116,6 +205,13 @@
                 </p>
                 <span class="text-gem-600 group-hover:underline underline-offset-1">
                     Revisar
+                    <!-- Arrow -->
+                    <svg class="inline w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
                 </span>
             </a>
 
@@ -128,6 +224,13 @@
                 </p>
                 <span class="text-gem-600 group-hover:underline underline-offset-1">
                     Ver
+                    <!-- Arrow -->
+                    <svg class="inline w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
                 </span>
             </a>
         </div>

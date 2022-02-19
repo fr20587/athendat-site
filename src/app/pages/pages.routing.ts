@@ -1,4 +1,3 @@
-import { ProductResolver } from './products/products.resolver';
 // Angular Modules
 import { Routes } from '@angular/router';
 
@@ -10,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { TermsComponent } from './terms/terms.component';
 
 // Resolvers
+import { ContactResolver } from './contact/contact.resolver';
 import { HomeResolver } from './home/home.resolver';
 import { PrivacyResolver } from './privacy/privacy.resolver';
+import { ProductResolver } from './products/products.resolver';
 import { TermsResolver } from './terms/terms.resolver';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 
 /**
  * Pages Routes
@@ -43,7 +44,10 @@ export const PAGES_ROUTES: Routes = [
             {
                 path: 'contact',
                 component: ContactComponent,
-                data: {animation: 'ContactPage'}
+                data: {animation: 'ContactPage'},
+                resolve: {
+                    messageCategory: ContactResolver
+                }
             },
             {
                 path: 'faqs',

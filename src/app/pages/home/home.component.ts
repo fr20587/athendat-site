@@ -1,5 +1,5 @@
 // Angular Modules
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 // Third properties
 import { Subject, takeUntil } from 'rxjs';
@@ -15,6 +15,8 @@ import { athAnimations } from './../../@ath/animations';
 // Types
 import { Member } from './home.types';
 import { Product } from './../products/products.types';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 /**
  * Home Component
@@ -33,9 +35,16 @@ import { Product } from './../products/products.types';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
+    // ViewChild properties
+    @ViewChild('subscriberNgForm') subscriberNgForm: NgForm;
+
     // Public properties
+    public alertMessage: string;
     public iconNames = IconNamesEnum;
+    public isLoading: boolean = false;
     public products: Product[] = [];
+    public showAlert: boolean = false;
+    public subscriberForm: FormGroup;
     public team: Member[] = [];
 
     // Private properties
@@ -46,6 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
+        private _formBuilder: FormBuilder,
         private _homeService: HomeService,
         private _productsService: ProductsService,
     ) { }
@@ -82,6 +92,12 @@ export class HomeComponent implements OnInit, OnDestroy {
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
             });
+
+        // Init contact form
+        this.subscriberForm = this._formBuilder.group({
+            active: [true, [Validators.required]],
+            email: [null, [Validators.required, Validators.email]],
+        });
     }
 
     /**
@@ -91,6 +107,69 @@ export class HomeComponent implements OnInit, OnDestroy {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
+    }
+
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Public methods
+    // -----------------------------------------------------------------------------------------------------
+
+    /**
+     * Register email
+     *
+     * @memberof HomeComponent
+     */
+    public registerEmail(): void {
+
+        // Disable the form
+        this.subscriberForm.disable();
+
+        // Change loading status
+        this.isLoading = true;
+
+        // Defining data object
+        let data = this.subscriberForm.getRawValue();
+
+        console.log(data);
+
+        this._homeService.registerSubscriber(data)
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((response) => {
+
+                // Store response message
+                this.alertMessage = response.message;
+
+                this.showAlert = true;
+
+                // Re-enable the form
+                this.subscriberForm.enable();
+
+                // Reset the form
+                this.subscriberNgForm.resetForm();
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+
+            }, (err: HttpErrorResponse) => {
+
+                console.warn(err);
+
+                // Change loading status
+                this.isLoading = false;
+
+                // Show error message
+                // this.alertMessage = `${err.error.statusCode}: ${err.message}`;
+
+                // Show error alert
+                // this.isErrorAlert = true;
+
+                // Re-enable the form
+                this.subscriberForm.enable();
+
+                // Reset the form
+                this.subscriberNgForm.resetForm();
+
+            });
     }
 
 }

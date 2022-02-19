@@ -53,7 +53,7 @@ interface Change {
 
 export interface Plan {
     name?: string;
-    cost?: string;
+    cost?: number;
     description?: string;
     planSection?: PlanSection[];
 }

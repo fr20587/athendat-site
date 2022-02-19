@@ -55,13 +55,3 @@ $athendat-theme: mat.define-light-theme(( color: ( primary: $athendat-primary, a
 .three-plans {
     grid-template-columns: 25% 25% 25% 25%;
 }
-
-html,
-body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
