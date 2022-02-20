@@ -6,8 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 
 // Types
-import { Product } from './products.types';
+import { EnzonaResponse, Product, EnzonaPaymentRequest } from './products.types';
 
+// Environment
+import { environment } from 'src/environments/environment';
+// const API_URL = process.env['API_URL'] || environment.API_URL;
+const API_URL = environment.API_URL;
 
 /**
  * Products Service
@@ -77,6 +81,21 @@ export class ProductsService {
                 return product;
             })
         );
+    }
+
+    /**
+     * Products Service
+     *
+     * @param {PaymentRequest} paymentRequest
+     * @return {Observable<EnzonaResponse>}
+     * @memberof ProductsService
+     */
+    public createEnzonaPaymentRequest(paymentRequest: EnzonaPaymentRequest): Observable<EnzonaResponse> {
+        return this._httpClient.post<EnzonaResponse>(`${API_URL}/enzona/payment`, paymentRequest);
+    }
+
+    public completeEnzonaPayment(transaction_uuid: string) {
+        return this._httpClient.get(`${API_URL}/enzona/complete-payment/${transaction_uuid}`)
     }
 
 }

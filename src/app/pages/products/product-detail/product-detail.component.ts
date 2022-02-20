@@ -12,6 +12,7 @@ import { ProductsService } from './../products.service';
 // Types
 import { Plan, Product } from './../products.types';
 import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
     selector: 'ath-product-detail',
@@ -32,9 +33,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
      * Constructor
      */
     constructor(
+        private _activatedRoute: ActivatedRoute,
         private _changeDetectorRef: ChangeDetectorRef,
         private _dialog: MatDialog,
         private _productsService: ProductsService,
+        private _router: Router
     ) { }
 
     // -----------------------------------------------------------------------------------------------------
@@ -45,6 +48,21 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
      * On init
      */
     ngOnInit(): void {
+
+        // Get transaction uuid and complete payment
+        this._activatedRoute.queryParams
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((params) => {
+
+                if (params['completed']) {
+                    this.openPaymentDialog(null, true);
+                }
+
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+            })
+
         // Get selected product
         this._productsService.product$
             .pipe(takeUntil(this._unsubscribeAll))
@@ -77,12 +95,14 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
      * @param {Plan} plan
      * @memberof ProductDetailComponent
      */
-    public openPaymentDialog(plan: Plan) {
+    public openPaymentDialog(plan: Plan = null, completed?: boolean) {
         this._dialog.open(PaymentDialogComponent, {
             panelClass: 'ath-dialog-panel',
             data: {
-                productName: this.selectedProduct.name,
-                plan
+                url: this._router.url,
+                product: this.selectedProduct,
+                plan,
+                completed
             },
         });
     }

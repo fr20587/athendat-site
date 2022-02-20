@@ -18,6 +18,7 @@ import { HomeResolver } from './home/home.resolver';
 import { PrivacyResolver } from './privacy/privacy.resolver';
 import { ProductResolver } from './products/products.resolver';
 import { TermsResolver } from './terms/terms.resolver';
+import { PaymentCompleteComponent } from './products/payment-complete/payment-complete.component';
 
 /**
  * Pages Routes
@@ -77,6 +78,10 @@ export const PAGES_ROUTES: Routes = [
                 resolve: {
                     product: ProductResolver
                 }
+            },
+            {
+                path: 'complete-payment/:productId',
+                component: PaymentCompleteComponent
             },
         ]
     }

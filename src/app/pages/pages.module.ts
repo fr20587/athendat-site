@@ -20,6 +20,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PAGES_ROUTES } from './pages.routing';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { PaymentDialogComponent } from './products/product-detail/payment-dialog/payment-dialog.component';
+import { PaymentCompleteComponent } from './products/payment-complete/payment-complete.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PaymentDialogComponent } from './products/product-detail/payment-dialog
         PrivacyComponent,
         ProductDetailComponent,
         PaymentDialogComponent,
+        PaymentCompleteComponent,
     ],
     imports: [
         LayoutModule,
