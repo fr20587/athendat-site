@@ -1,387 +1,359 @@
 [{
-        "_id": "1",
-        "logoUrl": "assets/images/products/logo-athgro.svg",
-        "coverUrl": "assets/images/products/athgro-admin.png",
-        "link": "https://athendat.site/athgro.market/#/home",
-        "state": "En pruebas",
-        "name": "Athgro.Market",
-        "abstract": "Athgro.Market es una plataforma para el comercio minorista en línea de productos agrícolas que permite gestionar todo el proceso desde la compra de productos e insumos a proveedores hasta la planificación de las entregas a los clientes.",
-        "phases": [{
-                "number": 1,
-                "status": "Planificado",
-                "sections": [{
-                        "name": "Plataforma",
-                        "status": "Completado",
-                        "points": [{
-                            "name": "Web",
+    "_id": "1",
+    "logoUrl": "assets/images/products/logo-athgro.svg",
+    "coverUrl": "assets/images/products/athgro-admin.png",
+    "link": "https://athendat.site/athgro.market/#/home",
+    "state": "En pruebas",
+    "name": "Athgro.Market",
+    "abstract": "Athgro.Market es una plataforma para el comercio minorista en línea de productos agrícolas que permite gestionar todo el proceso desde la compra de productos e insumos a proveedores hasta la planificación de las entregas a los clientes.",
+    "phases": [{
+            "number": 1,
+            "status": "Planificado",
+            "sections": [{
+                    "name": "Plataforma",
+                    "status": "Completado",
+                    "points": [{
+                        "name": "Web",
+                        "status": "Completado"
+                    }]
+                },
+                {
+                    "name": "Autenticación",
+                    "status": "Completado",
+                    "points": [{
+                            "name": "Por Formulario",
                             "status": "Completado"
-                        }]
-                    },
-                    {
-                        "name": "Autenticación",
-                        "status": "Completado",
-                        "points": [{
-                                "name": "Por formulario",
-                                "status": "Completado"
-                            },
-                            {
-                                "name": "Por Google",
-                                "status": "Completado"
-                            },
-                            {
-                                "name": "Por Facebook",
-                                "status": "Completado"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Funcionalidades",
-                        "status": "Proceso",
-                        "points": [{
-                                "name": "Filtros de productos",
-                                "status": "Proceso"
-                            },
-                            {
-                                "name": "Paginado con scroll infinito",
-                                "status": "Proceso"
-                            },
-                            {
-                                "name": "Captar comentarios sobre la aplicación",
-                                "status": "Proceso"
-                            },
-                            {
-                                "name": "Perfil de usuarios",
-                                "status": "Proceso"
-                            },
-                            {
-                                "name": "Agregar capacidades de aplicación progresiva",
-                                "status": "Completado"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Notificaciones",
-                        "status": "Proceso",
-                        "points": [{
-                                "name": "Via correo electrónico",
-                                "status": "Proceso"
-                            },
-                            {
-                                "name": "Via Telegram",
-                                "status": "Proceso"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Pasarelas de pago",
-                        "status": "Completado",
-                        "points": [{
-                            "name": "QvaPay",
+                        },
+                        {
+                            "name": "Por Google",
                             "status": "Completado"
-                        }]
-                    }
-                ]
-            },
-            {
-                "number": 2,
-                "status": "Planificado",
-                "sections": [{
-                        "name": "Autenticación",
-                        "status": "Planificado",
-                        "points": [{
-                            "name": "Por dos pasos",
+                        },
+                        {
+                            "name": "Por Facebook",
+                            "status": "Proceso"
+                        }
+                    ]
+                },
+                {
+                    "name": "Funcionalidades",
+                    "status": "Proceso",
+                    "points": [{
+                            "name": "Filtros de productos",
+                            "status": "Proceso"
+                        },
+                        {
+                            "name": "Paginado con scroll infinito",
+                            "status": "Proceso"
+                        },
+                        {
+                            "name": "Captar comentarios sobre la aplicación",
+                            "status": "Proceso"
+                        },
+                        {
+                            "name": "Perfil de usuarios",
+                            "status": "Proceso"
+                        },
+                        {
+                            "name": "Agregar capacidades de aplicación progresiva",
+                            "status": "Completado"
+                        }
+                    ]
+                },
+                {
+                    "name": "Notificaciones",
+                    "status": "Proceso",
+                    "points": [{
+                            "name": "Via correo electrónico",
+                            "status": "Completado"
+                        },
+                        {
+                            "name": "Via Telegram",
+                            "status": "Proceso"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pasarelas de pago",
+                    "status": "Completado",
+                    "points": [{
+                        "name": "QvaPay",
+                        "status": "Completado"
+                    }]
+                }
+            ]
+        },
+        {
+            "number": 2,
+            "status": "Planificado",
+            "sections": [{
+                    "name": "Autenticación",
+                    "status": "Planificado",
+                    "points": [{
+                        "name": "Por dos pasos",
+                        "status": "Planificado"
+                    }]
+                },
+                {
+                    "name": "Funcionalidades",
+                    "status": "Planificado",
+                    "points": [{
+                            "name": "Mostrar publicidad de vendedores en la página de inicio",
                             "status": "Planificado"
-                        }]
-                    },
-                    {
-                        "name": "Funcionalidades",
-                        "status": "Planificado",
-                        "points": [{
-                                "name": "Mostrar publicidad de vendedores en la página de inicio",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Comentar sobre productos",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Comentar sobre vendedores",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Agregar caching de productos para mejorar el rendimiento",
-                                "status": "Planificado"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Notificaciones",
-                        "status": "Planificado",
-                        "points": [{
-                                "name": "En la aplicación",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Via SMS",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Notificaciones push",
-                                "status": "Planificado"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Pasarelas de pago",
-                        "status": "Planificado",
-                        "points": [{
-                                "name": "Solana Pay",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "ENZONA",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Transfermovil",
-                                "status": "Planificado"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "number": 3,
-                "status": "Planificado",
-                "sections": [{
-                        "name": "Plataforma",
-                        "status": "Planificado",
-                        "points": [{
-                                "name": "Android Nativo",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "iOS Nativo",
-                                "status": "Planificado"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Autenticación",
-                        "status": "Planificado",
-                        "points": [{
-                            "name": "Por link mágico sin contraseña",
+                        },
+                        {
+                            "name": "Comentar sobre productos",
                             "status": "Planificado"
-                        }]
-                    },
-                    {
-                        "name": "Funcionalidades",
-                        "status": "Planificado",
-                        "points": [{
-                            "name": "Mostrar publicidad de terceros",
+                        },
+                        {
+                            "name": "Comentar sobre vendedores",
                             "status": "Planificado"
-                        }]
-                    },
-                    {
-                        "name": "Notificaciones",
-                        "status": "Planificado",
-                        "points": [{
-                            "name": "Via WhatsApp",
+                        },
+                        {
+                            "name": "Agregar caching de productos para mejorar el rendimiento",
                             "status": "Planificado"
-                        }]
-                    },
-                    {
-                        "name": "Pasarelas de pago",
-                        "status": "Planificado",
-                        "points": [{
-                                "name": "Bitcoin",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "PayPal",
-                                "status": "Planificado"
-                            },
-                            {
-                                "name": "Stripe",
-                                "status": "Planificado"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "currentVersion": "v0.0.1",
-        "versionChanges": [{
-            "releaseDate": "15/02/2022",
-            "version": "v0.0.1",
-            "changes": [{
-                "section": "Lanzamiento inicial",
-                "points": [
-                    "Funcionalidades de producto mínimo viable para probar el mercado"
-                ]
-            }]
-        }],
-        "plans": [{
-                "name": "Pequeño Vendedor",
-                "cost": 0,
-                "description": "El costo inicial del plan Pequeño Vendedor es de nulo y está pensados en los pequeños negocios que necesiten solo las herramientas básicas para comenzar a vender a traves de Internet. El cliente solo deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
-            },
-            {
-                "name": "Vendedor Minorista",
-                "cost": 987,
-                "description": "El plan Vendedor Minorista está pensados en para aquellos negocios que tienen una cadena de suministros estable quieran comenzar a vender a traves de Internet llegando al mayor número de clientes, además del costo inicial el cliente deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
-            }
-        ],
-        "planFeatures": [{
-                "name": "Componentes Básicos",
-                "features": [{
-                        "name": "Gestión de productos",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de categorías",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de órdenes",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de mensajeros",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de proveedores",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de diapositivas",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de varios negocios",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión del negocio por varios usuarios",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de clientes",
-                        "planA": true,
-                        "planB": true
-                    }
-                ]
-            },
-            {
-                "name": "Gestión de Cobros",
-                "features": [{
-                        "name": "Gestión de cobro en efectivo",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por QvaPay",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por ENZONA",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por Transfermovil",
-                        "observation": "Cuando esté disponible",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por Solana Pay",
-                        "observation": "Cuando esté disponible",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por Bitcoin",
-                        "observation": "Cuando esté disponible",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Gestión de cobro por PayPal",
-                        "observation": "Cuando esté disponible",
-                        "planA": true,
-                        "planB": true
-                    }
-                ]
-            },
-            {
-                "name": "Notificaciones",
-                "features": [{
-                        "name": "Notificaciones de nuevas órdenes por correo electrónico",
-                        "planA": true,
-                        "planB": true
-                    },
-                    {
-                        "name": "Notificaciones de nuevas órdenes por SMS",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Notificaciones de nuevas órdenes por Telegram",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Notificaciones de nuevas órdenes por WhatsApp",
-                        "observation": "Cuando esté disponible",
-                        "planA": false,
-                        "planB": true
-                    },
-                    {
-                        "name": "Notificar a los clientes de nuevas ofertas mediante notificaciones push",
-                        "observation": "Cuando esté disponible",
-                        "planA": false,
-                        "planB": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "_id": "2",
-        "logoUrl": "assets/images/products/logo-athbook.svg",
-        "state": "En desarrollo",
-        "name": "Athbook",
-        "abstract": "Athbook es una plataforma para la gestión de reservas para todo tipo de negocio que requiera de este proceso, un ejemplo pueden ser: hostales, restaurantes, salones de belleza, clínicas veterinarias, eventos, transfers entre otros muchos."
-    },
-    {
-        "_id": "3",
-        "logoUrl": "assets/images/products/logo-erp.svg",
-        "state": "En desarrollo",
-        "name": "Atherp",
-        "abstract": "Atherp es una plataforma para la planificación de recursos empresariales (ERP) ciento por ciento integrable con el resto de nuestras aplicaciones o aplicaciones de terceros."
-    },
-    {
-        "_id": "4",
-        "logoUrl": "assets/images/products/logo-erp.svg",
-        "state": "En desarrollo",
-        "name": "aInvertir",
-        "abstract": "aInvertir es una aplicación para la realización de estudios de pre inversión según la legislación aplicable en Cuba capaz de realizar todos los cálculos financieros necesarios para que conozca de antemano si la inversión que piensa hacer tendrá los beneficios deseados en el tiempo previsto."
-    },
-    {
-        "_id": "5",
-        "state": "Disponible",
-        "name": "Desarrollo a la medida",
-        "abstract": "Si necesita una desarrollo de una aplicación específica para la gestión de su negocio o requiere de una web para posicionar su negocio en Internet, estamos a su disposición."
-    }
-]
+                        }
+                    ]
+                },
+                {
+                    "name": "Notificaciones",
+                    "status": "Planificado",
+                    "points": [{
+                            "name": "En la aplicación",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "Via SMS",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "Notificaciones push",
+                            "status": "Planificado"
+                        }
+                    ]
+                },
+                {
+                    "name": "Pasarelas de pago",
+                    "status": "Planificado",
+                    "points": [{
+                            "name": "Solana Pay",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "ENZONA",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "Transfermovil",
+                            "status": "Planificado"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "number": 3,
+            "status": "Planificado",
+            "sections": [{
+                    "name": "Plataforma",
+                    "status": "Planificado",
+                    "points": [{
+                            "name": "Android Nativo",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "iOS Nativo",
+                            "status": "Planificado"
+                        }
+                    ]
+                },
+                {
+                    "name": "Autenticación",
+                    "status": "Planificado",
+                    "points": [{
+                        "name": "Por link mágico sin contraseña",
+                        "status": "Planificado"
+                    }]
+                },
+                {
+                    "name": "Funcionalidades",
+                    "status": "Planificado",
+                    "points": [{
+                        "name": "Mostrar publicidad de terceros",
+                        "status": "Planificado"
+                    }]
+                },
+                {
+                    "name": "Notificaciones",
+                    "status": "Planificado",
+                    "points": [{
+                        "name": "Via WhatsApp",
+                        "status": "Planificado"
+                    }]
+                },
+                {
+                    "name": "Pasarelas de pago",
+                    "status": "Planificado",
+                    "points": [{
+                            "name": "Bitcoin",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "PayPal",
+                            "status": "Planificado"
+                        },
+                        {
+                            "name": "Stripe",
+                            "status": "Planificado"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "currentVersion": "v0.0.1",
+    "versionChanges": [{
+        "releaseDate": "15/02/2022",
+        "version": "v0.0.1",
+        "changes": [{
+            "section": "Lanzamiento inicial",
+            "points": [
+                "Funcionalidades de producto mínimo viable para probar el mercado"
+            ]
+        }]
+    }],
+    "plans": [{
+            "name": "Pequeño Vendedor",
+            "cost": 0,
+            "description": "El costo inicial del plan Pequeño Vendedor es de nulo y está pensados en los pequeños negocios que necesiten solo las herramientas básicas para comenzar a vender a traves de Internet. El cliente solo deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+        },
+        {
+            "name": "Vendedor Minorista",
+            "cost": 987,
+            "description": "El plan Vendedor Minorista está pensados en para aquellos negocios que tienen una cadena de suministros estable quieran comenzar a vender a traves de Internet llegando al mayor número de clientes, además del costo inicial el cliente deberá pagar el equivalente a 1.00 CUP por unidad vendida del producto los cuales serán facturados según se acuerde."
+        }
+    ],
+    "planFeatures": [{
+            "name": "Componentes Básicos",
+            "features": [{
+                    "name": "Gestión de productos",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de categorías",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de órdenes",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de mensajeros",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de proveedores",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de diapositivas",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de varios negocios",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión del negocio por varios usuarios",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de clientes",
+                    "planA": true,
+                    "planB": true
+                }
+            ]
+        },
+        {
+            "name": "Gestión de Cobros",
+            "features": [{
+                    "name": "Gestión de cobro en efectivo",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por QvaPay",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por ENZONA",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por Transfermovil",
+                    "observation": "Cuando esté disponible",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por Solana Pay",
+                    "observation": "Cuando esté disponible",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por Bitcoin",
+                    "observation": "Cuando esté disponible",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Gestión de cobro por PayPal",
+                    "observation": "Cuando esté disponible",
+                    "planA": true,
+                    "planB": true
+                }
+            ]
+        },
+        {
+            "name": "Notificaciones",
+            "features": [{
+                    "name": "Notificaciones de nuevas órdenes por correo electrónico",
+                    "planA": true,
+                    "planB": true
+                },
+                {
+                    "name": "Notificaciones de nuevas órdenes por SMS",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Notificaciones de nuevas órdenes por Telegram",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Notificaciones de nuevas órdenes por WhatsApp",
+                    "observation": "Cuando esté disponible",
+                    "planA": false,
+                    "planB": true
+                },
+                {
+                    "name": "Notificar a los clientes de nuevas ofertas mediante notificaciones push",
+                    "observation": "Cuando esté disponible",
+                    "planA": false,
+                    "planB": true
+                }
+            ]
+        }
+    ]
+}]
