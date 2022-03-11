@@ -10,7 +10,7 @@
                 </button>
             </div>
 
-            
+
             <div class="px-6 pb-2 space-y-6 lg:px-8 sm:pb-4 xl:pb-6" *ngIf="selectedStep !== 'step3'">
 
                 <!-- Title -->
@@ -68,12 +68,12 @@
                                     <span class="ml-3 whitespace-nowrap">QvaPay</span>
                                 </button>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <button class="flex items-center justify-start w-full p-3 text-base font-bold text-gray-900 bg-gray-50 rounded-sm hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white" (click)="createEnzonaPaymentRequest()">
                                     <img class="h-6" [src]="'assets/images/payment/enzona.png'" [alt]="'ENZONA'">
                                     <span class="ml-3 whitespace-nowrap">ENZONA</span>
                                 </button>
-                            </li>
+                            </li> -->
                         </ul>
 
                         <!-- Alert -->
@@ -109,12 +109,12 @@
                     </div>
                 </div>
 
-                 <!-- Step two select payment method -->
-                 <div *ngSwitchCase="'step3'" [@slideInRight] [@slideOutRight]>
-                    
+                <!-- Step two select payment method -->
+                <div *ngSwitchCase="'step3'" [@slideInRight] [@slideOutRight]>
+
                     <div class="max-w-sm bg-white rounded-sm dark:bg-gray-800 p-10">
                         <div class="flex flex-col items-center">
-                            <img class="mb-3 w-24 h-24" [src]="'assets/images/payment/completed.svg'" alt="Bonnie image"/>
+                            <img class="mb-3 w-24 h-24" [src]="'assets/images/payment/completed.svg'" alt="Bonnie image" />
 
                             <!-- Title -->
                             <h3 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
@@ -125,7 +125,7 @@
                             <span class="text-sm text-gray-500 dark:text-gray-400 text-center">
                                 Le hemos enviado un correo electrónico con su licencial.
                             </span>
-                            
+
                             <div class="flex mt-4 space-x-3 lg:mt-6">
                                 <button class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-sm hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" (click)="closeDialog()">
                                     Cerrar
@@ -134,7 +134,7 @@
                         </div>
                     </div>
 
-                 </div>
+                </div>
 
 
                 <div class="px-6 pb-4 space-y-6 lg:px-8 sm:pb-6 xl:pb-8" *ngIf="selectedStep === 'step1'">
