@@ -81,85 +81,115 @@ export interface EnzonaResponse {
 }
 
 export interface Result {
-    ok:      boolean;
+    ok: boolean;
     message: string;
     payment: Payment;
 }
 
 export interface Payment {
     transaction_uuid: string;
-    currency:         string;
-    created_at:       Date;
-    updated_at:       Date;
-    status_code:      number;
-    status_denom:     string;
-    description:      string;
-    invoice_number:   string;
-    merchant_op_id:   string;
-    terminal_id:      string;
-    amount:           Amount;
-    items:            Item[];
-    links:            Link[];
-    commission:       string;
+    currency: string;
+    created_at: Date;
+    updated_at: Date;
+    status_code: number;
+    status_denom: string;
+    description: string;
+    invoice_number: string;
+    merchant_op_id: string;
+    terminal_id: string;
+    amount: Amount;
+    items: Item[];
+    links: Link[];
+    commission: string;
 }
 
 export interface Amount {
-    total:   string;
+    total: string;
     details: Details;
 }
 
 export interface Details {
     shipping: string;
-    tax:      string;
+    tax: string;
     discount: string;
-    tip:      string;
+    tip: string;
 }
 
 export interface Item {
     description: string;
-    quantity:    string;
-    price:       string;
-    tax:         string;
-    name:        string;
+    quantity: string;
+    price: string;
+    tax: string;
+    name: string;
 }
 
 export interface Link {
-    rel:    string;
+    rel: string;
     method: string;
-    href:   string;
+    href: string;
 }
 
 
 export interface EnzonaPaymentRequest {
-    description:         string;
-    currency:            string;
-    merchant_op_id:      string;
-    invoice_number:      string;
-    terminal_id:         string;
-    amount:              Amount;
-    items:               Item[];
-    return_url:          string;
-    cancel_url:          string;
+    description: string;
+    currency: string;
+    merchant_op_id: string;
+    invoice_number: string;
+    terminal_id: string;
+    amount: Amount;
+    items: Item[];
+    return_url: string;
+    cancel_url: string;
     buyer_identity_code: string;
 }
 
 export interface Amount {
-    total:   string;
+    total: string;
     details: Details;
 }
 
 export interface Details {
     shipping: string;
-    tax:      string;
+    tax: string;
     discount: string;
-    tip:      string;
+    tip: string;
 }
 
 export interface Item {
-    name:        string;
+    name: string;
     description: string;
-    quantity:    string;
-    price:       string;
-    tax:         string;
+    quantity: string;
+    price: string;
+    tax: string;
 }
 
+
+export interface ProductLicense {
+    _id?: string,
+    active: boolean,
+    email: string,
+    license: string,
+    productName: string,
+    createdAt?: Date
+}
+
+
+export interface QvaPayPaymentRequest {
+    amount: number,
+    description: string,
+    email: string,
+    license: string,
+    productName: string,
+    createdAt: Date
+}
+
+export interface QvaPayPaymentResponse {
+    app_id: string,
+    amount: string,
+    description: string,
+    remote_id: string,
+    signed: string,
+    transation_uuid: string,
+    url: string,
+    signedUrl: string,
+}

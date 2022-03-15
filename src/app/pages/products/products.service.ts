@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 
 // Types
-import { EnzonaResponse, Product, EnzonaPaymentRequest } from './products.types';
+import { EnzonaResponse, Product, EnzonaPaymentRequest, ProductLicense, QvaPayPaymentRequest, QvaPayPaymentResponse } from './products.types';
 
 // Environment
 import { environment } from 'src/environments/environment';
@@ -84,7 +84,7 @@ export class ProductsService {
     }
 
     /**
-     * Products Service
+     * Create ENZONA Payment Request
      *
      * @param {PaymentRequest} paymentRequest
      * @return {Observable<EnzonaResponse>}
@@ -94,8 +94,47 @@ export class ProductsService {
         return this._httpClient.post<EnzonaResponse>(`${API_URL}/enzona/payment`, paymentRequest);
     }
 
-    public completeEnzonaPayment(transaction_uuid: string) {
+    /**
+     * Complete Payment
+     *
+     * @param {string} transaction_uuid
+     * @memberof ProductsService
+     */
+    public completeEnzonaPayment(transaction_uuid: string): Observable<any> {
         return this._httpClient.get(`${API_URL}/enzona/complete-payment/${transaction_uuid}`)
+    }
+
+    /**
+     * Cancel Payment
+     *
+     * @param {string} transaction_uuid
+     * @memberof ProductsService
+     */
+    public cancelEnzonaPayment(transaction_uuid: string): Observable<any> {
+        return this._httpClient.get(`${API_URL}/enzona/cancel-payment/${transaction_uuid}`);
+    }
+
+
+    /**
+     * Create QvaPay Payment Request
+     *
+     * @param {PaymentRequest} paymentRequest
+     * @return {Observable<QvaPayPaymentResponse>}
+     * @memberof ProductsService
+     */
+     public createQvaPayPaymentRequest(paymentRequest: QvaPayPaymentRequest): Observable<QvaPayPaymentResponse> {
+        return this._httpClient.post<QvaPayPaymentResponse>(`${API_URL}/qvapay/create/fact-license`, paymentRequest);
+    }
+
+    /**
+     * Get Free License
+     *
+     * @param {ProductLicense} data
+     * @return {Observable<any>}
+     * @memberof ProductsService
+     */
+    public getFreeLicense(data: ProductLicense): Observable<any> {
+        return this._httpClient.post(`${API_URL}/licenses`, data);
     }
 
 }

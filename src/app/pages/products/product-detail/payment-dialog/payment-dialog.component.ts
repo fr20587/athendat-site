@@ -14,7 +14,7 @@ import { athAnimations } from 'src/app/@ath/animations';
 import { ProductsService } from '../../products.service';
 
 // Types
-import { EnzonaPaymentRequest, Plan, Product } from '../../products.types';
+import { EnzonaPaymentRequest, Plan, Product, ProductLicense, QvaPayPaymentRequest } from '../../products.types';
 
 
 /**
@@ -59,9 +59,6 @@ export class PaymentDialogComponent implements OnInit, OnDestroy {
         private _router: Router
     ) {
         this.steps = ['step1', 'step2', 'step3'];
-        console.log(this.data);
-
-
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -74,7 +71,7 @@ export class PaymentDialogComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
 
         // Set dialog step
-        if(this.data.completed) {
+        if (this.data.completed) {
             this.selectedStep = 'step3'
         }
 
@@ -116,11 +113,65 @@ export class PaymentDialogComponent implements OnInit, OnDestroy {
      *
      * @param step
      */
-    public changeStep(step: string) {
+    public changeStep(step: string): void {
         this.selectedStep = step;
     }
 
-    public createEnzonaPaymentRequest() {
+    /**
+     * Get Free License
+     */
+    public getFreeLicense(): void {
+
+        // Start loading
+        this.isLoading = true;
+
+        // Build data object
+        const data: ProductLicense = {
+            active: true,
+            license: null,
+            email: this.paymentForm.get('email').value,
+            productName: this.data.product.name
+        };
+
+        // Send data to service
+        this._productsService.getFreeLicense(data)
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe((response) => {
+
+                console.log(response);
+
+
+                // Stop loading
+                this.isLoading = false;
+
+                // Go to complete step
+                this.selectedStep = 'step3'
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+            }, (err: HttpErrorResponse) => {
+
+                console.warn(err);
+
+
+                // Show error alert
+                this.showErrorAlert = true;
+
+                // Stop loading
+                this.isLoading = false;
+
+                // Set error message
+                this.errorMessage = err.error.message;
+            });
+    }
+
+    /**
+     * Create Enzona Payment Request
+     */
+    public createEnzonaPaymentRequest(): void {
+
+        // Start loading
+        this.isLoading = true;
 
         // Get client email
         const email = this.paymentForm.get('email').value;
@@ -150,11 +201,12 @@ export class PaymentDialogComponent implements OnInit, OnDestroy {
                     tax: '0.00'
                 }
             ],
-            return_url: `http://localhost:4200/#${this.data.url}`,
-            cancel_url: `http://localhost:4200/#${this.data.url}`,
+            return_url: `https://athendat.site/#${this.data.url}`,
+            cancel_url: `https://athendat.site/#${this.data.url}`,
             buyer_identity_code: email
         }
-// total: this.data.plan.cost.toString(),
+        // total: this.data.plan.cost.toString(),
+
         this._productsService.createEnzonaPaymentRequest(enzonaPaymentRequest)
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(response => {
@@ -171,12 +223,72 @@ export class PaymentDialogComponent implements OnInit, OnDestroy {
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
             }, (err: HttpErrorResponse) => {
+
+                // Stop loading
+                this.isLoading = false;
+
                 // Show error alert
                 this.showErrorAlert = true;
 
                 // Set error message
                 this.errorMessage = err.error.message;
-            })
+            });
+    }
+
+    /**
+     * Create QvaPay Payment Request
+     */
+    public createQvaPayPaymentRequest(): void {
+
+        // Start loading
+        this.isLoading = true;
+
+        // Get client email
+        const email = this.paymentForm.get('email').value;
+
+        // Create payment request
+        const qvaPayPaymentRequest: QvaPayPaymentRequest = {
+            amount: this.data.plan.cost / 25,
+            description: `Compra de licencia para producto ${this.data.product.name}, se ha aplicado una tasa de cambio de 1:25.`,
+            email,
+            productName: this.data.product.name,
+            license: null,
+            createdAt: null
+        }
+
+        // Send request
+        this._productsService.createQvaPayPaymentRequest(qvaPayPaymentRequest)
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(response => {
+
+                // Stop loading
+                this.isLoading = false;
+
+                // Redirect url
+                const redirectUrl = response.signedUrl;
+
+                // Open new windows
+                window.open(redirectUrl, '_blank');
+
+                // Close dialog
+                this.closeDialog()
+
+                // Mark for check
+                this._changeDetectorRef.markForCheck();
+            }, (err: HttpErrorResponse) => {
+
+                console.warn(err);
+
+                // Stop loading
+                this.isLoading = false;
+
+                // Show error alert
+                this.showErrorAlert = true;
+
+                // Set error message
+                this.errorMessage = err.error.messages;
+            });
+
     }
 }
 
