@@ -1,7 +1,7 @@
 [{
     "_id": "1",
     "logoUrl": "assets/images/products/logo-athgro.svg",
-    "coverUrl": "assets/images/products/athgro-admin.png",
+    "coverUrl": "assets/images/products/athgro-admin.webp",
     "link": "https://admin.athgro.store",
     "state": "En pruebas",
     "name": "Athgro.Store",
