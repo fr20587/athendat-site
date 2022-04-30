@@ -22,6 +22,8 @@ import { HttpInterceptorService } from './@ath/interceptors/http-interceptor.ser
 
 // Routes
 import { APP_ROUTES } from './app.routing';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 /**
  * Router Config
@@ -49,7 +51,13 @@ registerLocaleData(localeEs);
         HttpClientModule,
         RouterModule.forRoot(APP_ROUTES, routerConfig),
         NgxBootstrapIconsModule.pick(allIcons),
-        SharedModule
+        SharedModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [
         { provide: LOCALE_ID, useValue: 'es-CU' },
