@@ -1,6 +1,6 @@
 [{
     "_id": "1",
-    "imageUrl": "assets/images/team/frank.png",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331366/athendat/athendat.site/team/frank_j6olmm.webp",
     "fullName": "Frank Rodríguez López",
     "title": "CEO & Fundador",
     "subtitle": "Responsable del Proyecto",
@@ -32,7 +32,7 @@
     ]
 }, {
     "_id": "2",
-    "imageUrl": "assets/images/team/abel.jfif",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331349/athendat/athendat.site/team/abel_sqpmf7.jpg",
     "fullName": "Abel Pérez Chirino",
     "title": "CBO",
     "subtitle": "Responsable de Marca",
@@ -44,7 +44,7 @@
     }]
 }, {
     "_id": "3",
-    "imageUrl": "assets/images/team/andiel.jpg",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331342/athendat/athendat.site/team/andiel_rdlvgx.jpg",
     "fullName": "Andiel Muñoz Viamonte",
     "title": "CXO & Co-Fundador",
     "subtitle": "Responsable de Interfaz y Experiencia de Usuarios",
@@ -68,7 +68,7 @@
     }]
 }, {
     "_id": "4",
-    "imageUrl": "assets/images/team/lazaro.jpg",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331339/athendat/athendat.site/team/lazaro_vfr3q0.jpg",
     "fullName": "Lázaro Yasiel Pérez Roquet",
     "title": "CTO & Co-Fundador",
     "subtitle": "Responsable de Tecnologías",
@@ -88,7 +88,7 @@
     }]
 }, {
     "_id": "5",
-    "imageUrl": "assets/images/team/anabel.png",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331353/athendat/athendat.site/team/anabel_fxcnrh.webp",
     "fullName": "Anabel Rodríguez González",
     "title": "COO & Co-Fundador",
     "subtitle": "Responsable de Operaciones",
@@ -108,7 +108,7 @@
     }]
 }, {
     "_id": "6",
-    "imageUrl": "assets/images/team/mpaula.jfif",
+    "imageUrl": "https://res.cloudinary.com/athendat/image/upload/v1651331348/athendat/athendat.site/team/mpaula_ezp4n4.jpg",
     "fullName": "María Paula Padrón Gorrin",
     "title": "CCO",
     "subtitle": "Responsable de Comunicación",

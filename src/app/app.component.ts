@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     public scrollY: number = 0;
     public showButton: boolean = false;
     public sound = new Howl({
-        src: 'assets/audio/bg-audio.mp3',
+        src: 'https://res.cloudinary.com/athendat/video/upload/v1651329527/athendat/athendat.site/audio/bg-audio_jbbfd7.mp3',
         loop: true,
         volume: 0.3
     });
